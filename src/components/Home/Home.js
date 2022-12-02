@@ -1,6 +1,8 @@
+import Button from '@mui/material/Button';
 import React from 'react';
 import "./Home.css";
 import { useNavigate } from 'react-router-dom';
+
 
 const Home = () => { 
     const navigate = useNavigate();
@@ -18,24 +20,32 @@ const Home = () => {
                             flexDirection:"column",
                             alignItems:"center",
                             justifyContent:"center",
-                            height:"100vh"
+                            height:"100vh",
+                        }}>
+                            <div class="container" className="profilepanel" style={
+                                {
+                                    display:"flex",
+                                    flexDirection:"column",
+                                    alignItems:"center",
+                                    justifyContent:"space-between",
+                                    height:"50%",
+                                }}>
+                                    <Button className="LocationButtons" color="error" variant="contained" onClick= {() => Handleclick('/Ajman')}>
+                                        Ajman
+                                    </Button>
 
-                    }}>
-                        <button style={{width:"20%"}} onClick= {() => Handleclick('/Ajman')}>
-                            Ajman
-                        </button>
+                                    <Button className="LocationButtons" color="error" variant="contained" onClick= {() => Handleclick('/Sharjah')}>
+                                        Sharjah
+                                    </Button>
 
-                        <button style={{width:"20%"}} onClick= {() => Handleclick('/Sharjah')}>
-                            Sharjah
-                        </button>
+                                    <Button className="LocationButtons" color="error" variant="contained" onClick= {() => Handleclick('/Dubai')}>
+                                        Dubai
+                                    </Button>
 
-                        <button style={{width:"20%"}} onClick= {() => Handleclick('/Dubai')}>
-                            Dubai
-                        </button>
-
-                        <button style={{width:"20%"}} onClick= {() => Handleclick('/AbuDhabi')}>
-                            Abu Dhabi
-                        </button>
+                                    <Button className="LocationButtons" color="error" variant="contained" onClick= {() => Handleclick('/AbuDhabi')}>
+                                        Abu Dhabi
+                                    </Button>
+                            </div>
                     </div>
                 </div>
             </div>

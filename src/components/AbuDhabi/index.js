@@ -24,7 +24,7 @@ const AbuDhabi = () => {
     // setUser(data)
 
     const Location = firebase.firestore().collection("Location").doc('AbuDhabi');
-
+    // eslint-disable-next-line
     const Cars = Location.collection('Cars').get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         setUser(current => [...current, doc.data()]);
@@ -43,6 +43,7 @@ const AbuDhabi = () => {
         getData();
 
         count++;
+        // eslint-disable-next-line
     },[])
 
     function popup(){
