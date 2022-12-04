@@ -76,7 +76,6 @@ const UserAbuDhabi= () => {
             justifyContent:"center",
             alignItems:"center"
         }}>
-                <h1 style={{color:"white"}}>Cars Available</h1>
                 {/* <table style={{color:"white"}}>
                 <thead>
                     <tr>
@@ -105,27 +104,28 @@ const UserAbuDhabi= () => {
                             <div className="services">
 
                                     <div className="content content-1">
-                                            <div className="fab fa-facebook"></div>
-                                                    <h2>Nissan</h2>
-                                                    <p>Model Z</p>
-                                                    <a href="#">Read More</a>
-                                            </div>
+                                        <div className="fab fa-facebook"></div>
+                                            <h2>Nissan</h2>
+                                            <p>Model Z</p>
+                                            <a href="#">Read More</a>
+                                    </div>
                                             
                                             
                                     <div className="content content-2">
-                                            <div className="fab fa-whatsapp"></div>
-                                                    <h2>Nissan</h2>
-                                                    <p>Model X</p>
-                                                    <a href="#">Read More</a>
-                                            </div>
+                                        <div className="fab fa-whatsapp"></div>
+                                            <h2>Nissan</h2>
+                                            <p>Model X</p>
+                                            <a href="#">Read More</a>
+                                    </div>
 
 
                                     <div className="content content-3">
-                                            <div className="fab fa-youtube"></div>
-                                                    <h2>Nissan</h2>
-                                                    <p>Model Y</p>
-                                                    <a href="#">Read More</a>
-                                            </div>
+                                        <div className="fab fa-youtube"></div>
+                                            <h2>Nissan</h2>
+                                            <p>Model Y</p>
+                                            <a href="#">Read More</a>
+                                    </div>
+
                             </div>
                         </div>
             
