@@ -1,5 +1,8 @@
 import { useEffect } from "react"
 import { useState } from "react"
+import image1 from './1.jpg';
+import image2 from './2.jpg';
+import image3 from './3.jpg';
 import firebase from '../../firbase'
 // import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import './UserAbuDhabi.css';
@@ -104,25 +107,28 @@ const UserAbuDhabi= () => {
                             <div className="services">
 
                                     <div className="content content-1">
-                                        <div className="fab fa-facebook"></div>
+                                        <div className="fab"></div>
+                                            <img src={image2} alt="car" style={{height: '150px', width: '200px'}}/>
                                             <h2>Nissan</h2>
-                                            <p>Model Z</p>
+                                            <p>SUNNY</p>
                                             <a href="#">Read More</a>
                                     </div>
                                             
                                             
-                                    <div className="content content-2">
-                                        <div className="fab fa-whatsapp"></div>
+                                    <div className="content content-1">
+                                        <div className="fab"></div>
+                                            <img src={image3} alt="car" style={{height: '150px', width: '200px'}}/>
                                             <h2>Nissan</h2>
-                                            <p>Model X</p>
+                                            <p>PATROL</p>
                                             <a href="#">Read More</a>
                                     </div>
 
 
-                                    <div className="content content-3">
-                                        <div className="fab fa-youtube"></div>
+                                    <div className="content content-1">
+                                        <div className="fab"></div>
+                                            <img src={image1} alt="car" style={{height: '150px', width: '200px'}}/>
                                             <h2>Nissan</h2>
-                                            <p>Model Y</p>
+                                            <p>MAGNITE</p>
                                             <a href="#">Read More</a>
                                     </div>
 
