@@ -1,7 +1,9 @@
 import { useEffect } from "react"
 import { useState } from "react"
 import firebase from '../../firbase'
-import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+// import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import './UserAbuDhabi.css';
+
 const UserAbuDhabi= () => {
     const [user, setUser] = useState([])
     const [file, setFile] = useState("");
@@ -98,11 +100,42 @@ const UserAbuDhabi= () => {
                         <span>{user.model}</span>
                         </button> 
                     })}
-            </div>
+                        <div className="cards">
+                            <h1>Available Cars</h1>
+                            <div className="services">
 
+                                    <div className="content content-1">
+                                            <div className="fab fa-facebook"></div>
+                                                    <h2>Nissan</h2>
+                                                    <p>Model Z</p>
+                                                    <a href="#">Read More</a>
+                                            </div>
+                                            
+                                            
+                                    <div className="content content-2">
+                                            <div className="fab fa-whatsapp"></div>
+                                                    <h2>Nissan</h2>
+                                                    <p>Model X</p>
+                                                    <a href="#">Read More</a>
+                                            </div>
+
+
+                                    <div className="content content-3">
+                                            <div className="fab fa-youtube"></div>
+                                                    <h2>Nissan</h2>
+                                                    <p>Model Y</p>
+                                                    <a href="#">Read More</a>
+                                            </div>
+                            </div>
+                        </div>
+            
+            
+            
+            </div>
            
         </div>
     )
 }
 
 export default UserAbuDhabi
+
