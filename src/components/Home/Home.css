@@ -1,11 +1,14 @@
 body{
-    background-image: url("bgbg.jpg");
+    /* background-image: url("bgbg.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-blend-mode: 0.6;
+    background-blend-mode: 0.6; */
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(254,167,167,1) 100%);
+    background-position: center;
+background-attachment: fixed;
 }
-html{
+html, body{
     height: 100%;
 }
 .welcome {
