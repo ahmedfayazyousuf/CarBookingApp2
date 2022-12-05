@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { useState } from "react"
 import firebase from '../../firbase'
+import { useNavigate } from 'react-router-dom';
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 const UserSharjah = () => {
     const [user, setUser] = useState([])
@@ -58,6 +59,11 @@ const UserSharjah = () => {
         setFile(event.target.files[0]);
     }
 
+    const navigate = useNavigate();
+    function UserNav(v){
+        navigate(v);
+    }
+
     
     return(
         <div style={{
@@ -93,7 +99,7 @@ const UserSharjah = () => {
             </table> */}
 
             {user.map((user) => {
-                        return <button>
+                        return <button onClick= {() => UserNav(`/User/${user.id}`)}>
                         <span>{user.name}</span>
                         <span>{user.model}</span>
                         </button> 
