@@ -1,16 +1,14 @@
 import { useEffect } from "react"
 import { useState } from "react"
-import image1 from './1.jpg';
-import image2 from './2.jpg';
-import image3 from './3.jpg';
 import firebase from '../../firbase'
 import { getStorage, ref, uploadBytesResumable, getDownloadURL, listAll } from "firebase/storage";
 import './UserAbuDhabi.css';
-
+import { useNavigate } from 'react-router-dom';
  
 const UserAbuDhabi= () => {
     const [user, setUser] = useState([])
     const [file, setFile] = useState("");
+    const [userID, setUserID] = useState([])
     const [imageList, setImageList] = useState([]);
     const storage = getStorage();
     var storagePath = 'uploads/' + file.name ;
@@ -24,6 +22,7 @@ var count = 0
         // eslint-disable-next-line
         const Cars = Location.collection('Cars').get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
+            setUserID(current => [...current, doc.id])
             setUser(current => [...current, doc.data()]);
         });
         console.log(user)
@@ -83,6 +82,13 @@ var count = 0
         setFile(event.target.files[0]);
     }
 
+    const navigate = useNavigate();
+
+    function UserNav(v){
+        navigate(v);
+
+    }
+
     
     return(
         <div style={{display:"flex",flexDirection:"column",height:"100vh",alignItems:"center"}}>,
@@ -90,13 +96,13 @@ var count = 0
                 <div className="cards">
                     <h1>Available Cars</h1>
                     <div className="services">
-                        {user.map((user) => {
+                        {user.map((user,index) => {
                             return <div className="content content-1">
                             <div className="fab"></div>
                                 <img src={user.imageURL} alt="car" style={{height: '150px', width: '200px'}}/>
                                 <h2>{user.name}</h2>
                                 <p>{user.model}</p>
-                                <a href="#">BOOK</a>    
+                                <button onClick= {() => UserNav(`/User/${userID[index]}`)}>BOOK</button>    
                             </div>
                         })}
                     </div>
