@@ -20,15 +20,18 @@
 .services{
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .content{
   display: flex;
   flex-wrap: wrap;
   flex: 1;
+  max-width: 300px;
   margin: 20px;
   padding: 20px;
   border: 2px solid black;
-  border-radius: 4px;
+  border-radius: 10px;
   transition: all .3s ease;
 }
 .content .fab{
@@ -84,5 +87,5 @@
 }
 
 body{
-  overflow-y: scroll;
+  overflow-y:scroll;
 }

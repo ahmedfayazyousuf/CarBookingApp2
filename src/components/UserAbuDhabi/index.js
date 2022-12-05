@@ -4,16 +4,36 @@ import image1 from './1.jpg';
 import image2 from './2.jpg';
 import image3 from './3.jpg';
 import firebase from '../../firbase'
-// import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { getStorage, ref, uploadBytesResumable, getDownloadURL, listAll } from "firebase/storage";
 import './UserAbuDhabi.css';
 
+ 
 const UserAbuDhabi= () => {
     const [user, setUser] = useState([])
     const [file, setFile] = useState("");
+    const [imageList, setImageList] = useState([]);
+    const storage = getStorage();
+    var storagePath = 'uploads/' + file.name ;
+    const storageRef = ref(storage, storagePath);
+
+    const imageListRef = ref(storage, storagePath);
+var count = 0
+    useEffect(() => {
+        if(count === 0){
+        const Location = firebase.firestore().collection("Location").doc('AbuDhabi');
+        // eslint-disable-next-line
+        const Cars = Location.collection('Cars').get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            setUser(current => [...current, doc.data()]);
+        });
+        console.log(user)
+        count += 1;
+        })}
+    
+    count += 1;}
+    , []);
 
     const getCars = async () =>{
-
-
         // await axios.get("http://localhost:4000/user_accepted").then(res => {
         //     console.log(res.data);
         //     setUser([res.data]);
@@ -65,83 +85,29 @@ const UserAbuDhabi= () => {
 
     
     return(
-        <div style={{
-            display:"flex",
-            flexDirection:"column",
-            height:"100vh",
-            justifyContent:"center",
-            alignItems:"center"
-        }}>,
-            <div style={{
-            display:"flex",
-            flexDirection:"column",
-            height:"50%",
-            justifyContent:"center",
-            alignItems:"center"
-        }}>
-                {/* <table style={{color:"white"}}>
-                <thead>
-                    <tr>
-                        <th>Car</th>
-                        <th>Model</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {user.map((user) => {
-                        return <tr key={user.name}>
-                        <td>{user.name}</td>
-                        <td>{user.model}</td>
-                        </tr> 
-                    })}
-                </tbody>
-            </table> */}
-
-            {user.map((user) => {
-                        return <button>
-                        <span>{user.name}</span>
-                        <span>{user.model}</span>
-                        </button> 
-                    })}
-                        <div className="cards">
-                            <h1>Available Cars</h1>
-                            <div className="services">
-
-                                    <div className="content content-1">
-                                        <div className="fab"></div>
-                                            <img src={image2} alt="car" style={{height: '150px', width: '200px'}}/>
-                                            <h2>Nissan</h2>
-                                            <p>SUNNY</p>
-                                            <a href="#">Read More</a>
-                                    </div>
-                                            
-                                            
-                                    <div className="content content-1">
-                                        <div className="fab"></div>
-                                            <img src={image3} alt="car" style={{height: '150px', width: '200px'}}/>
-                                            <h2>Nissan</h2>
-                                            <p>PATROL</p>
-                                            <a href="#">Read More</a>
-                                    </div>
-
-
-                                    <div className="content content-1">
-                                        <div className="fab"></div>
-                                            <img src={image1} alt="car" style={{height: '150px', width: '200px'}}/>
-                                            <h2>Nissan</h2>
-                                            <p>MAGNITE</p>
-                                            <a href="#">Read More</a>
-                                    </div>
-
+        <div style={{display:"flex",flexDirection:"column",height:"100vh",alignItems:"center"}}>,
+            <div style={{display:"flex",flexDirection:"column",height:"50%",alignItems:"center"}}>
+                <div className="cards">
+                    <h1>Available Cars</h1>
+                    <div className="services">
+                        {user.map((user) => {
+                            return <div className="content content-1">
+                            <div className="fab"></div>
+                                <img src={user.imageURL} alt="car" style={{height: '150px', width: '200px'}}/>
+                                <h2>{user.name}</h2>
+                                <p>{user.model}</p>
+                                <a href="#">BOOK</a>    
                             </div>
-                        </div>
-            
-            
-            
+                        })}
+                    </div>
+                </div>
             </div>
-           
         </div>
     )
 }
 
 export default UserAbuDhabi
+
+
+
 

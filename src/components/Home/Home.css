@@ -1,8 +1,8 @@
 body{
-    background-image: url("darkbg2.jpg");
+    background-image: url("bgbg.jpg");
     background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-blend-mode: 0.6;
 }
 html{
@@ -49,11 +49,11 @@ html{
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: white; 
+    background: grey; 
     border-radius: 10px;
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: black; 
+    background: #D1242A; 
   }

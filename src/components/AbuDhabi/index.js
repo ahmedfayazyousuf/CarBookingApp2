@@ -1,3 +1,4 @@
+import './AbuDhabi.css'
 import { useEffect } from "react"
 import { useState } from "react"
 import firebase from '../../firbase'
@@ -112,8 +113,8 @@ const AbuDhabi = () => {
             justifyContent:"center",
             alignItems:"center"
         }}>
-                <h1 style={{color:"white"}}>Cars Available</h1>
-                <table style={{color:"white"}}>
+                <h1 style={{color:"black"}}>Cars Available</h1>
+                <table style={{color:"black"}}>
                 <thead>
                     <tr>
                         <th>Car</th>
