@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import './AbuDhabi.css'
 import { useEffect } from "react"
 import { useState } from "react"
@@ -6,36 +7,17 @@ import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/
 const AbuDhabi = () => {
     const [user, setUser] = useState([])
     const [file, setFile] = useState("");
+    const [userID, setUserID] = useState([])
 
     const getData = async () =>{
-
-
-        // await axios.get("http://localhost:4000/user_accepted").then(res => {
-        //     console.log(res.data);
-        //     setUser([res.data]);
-        // });
-    //     const res = await fetch(`http://localhost:4000/user_accepted`, {
-    //     method: "GET",
-    //     headers: {
-    //         "Content-Type": "application/json"
-    //     }
-    // })
-
-    // const data = await res.json();
-    // setUser(data)
-
     const Location = firebase.firestore().collection("Location").doc('AbuDhabi');
     // eslint-disable-next-line
     const Cars = Location.collection('Cars').get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         setUser(current => [...current, doc.data()]);
     });
-
     console.log(user)
-
     })
-
-    // console.log(Cars)
     }
     var count = 0;
     useEffect(()=>{
@@ -52,7 +34,13 @@ const AbuDhabi = () => {
         popup.display = "flex";
         popup.opacity = 1;
         popup.zIndex = 100;
- 
+     }
+
+     function closepopup(){
+        var popup = document.getElementById("popup").style
+        popup.display = "flex";
+        popup.opacity = 0;
+        popup.zIndex = -10;
      }
 
      function handleChange(event) {
@@ -97,40 +85,25 @@ const AbuDhabi = () => {
         popup.opacity = 0;
         popup.zIndex = -1;
      }
+
+     const navigate = useNavigate();
+
     
     return(
-        <div style={{
-            display:"flex",
-            flexDirection:"column",
-            height:"100vh",
-            justifyContent:"center",
-            alignItems:"center"
-        }}>,
-            <div style={{
-            display:"flex",
-            flexDirection:"column",
-            height:"50%",
-            justifyContent:"center",
-            alignItems:"center"
-        }}>
-                <h1 style={{color:"black"}}>Cars Available</h1>
-                <table style={{color:"black"}}>
-                <thead>
-                    <tr>
-                        <th>Car</th>
-                        <th>Model</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {user.map((user) => {
-                        return <tr key={user.name}>
-                        <td>{user.name}</td>
-                        <td>{user.model}</td>
-                        </tr> 
-                    })}
-                </tbody>
-            </table>
-            </div>
+        <div style={{display:"flex",flexDirection:"column",height:"100vh",alignItems:"center"}}>,
+            <div className="cards">
+                    <h1>Available Cars</h1>
+                    <div className="services">
+                        {user.map((user,index) => {
+                            return <div className="content content-1">
+                            <div className="fab"></div>
+                                <img src={user.imageURL} alt="car" style={{height: '150px', width: '200px'}}/>
+                                <h2>{user.name}</h2>
+                                <p>{user.model}</p>
+                            </div>
+                        })}
+                    </div>
+                </div>
 
             <div style={{width:"100%",
             display:"flex",
@@ -140,43 +113,14 @@ const AbuDhabi = () => {
                 <button style={{width:"30%"}} onClick={popup}>Add Car</button>
             </div>
 
-            <div className='popup' id='popup' style={{
-                position:"absolute",
-                width: "44%",
-                height: "50%",
-                transition: "1s",
-                opacity:"0",
-                display:"flex",
-                flexDirection: "column",
-                justifyContent:"center",
-                alignItems:"center",
-                background:"blue",
-                zIndex:"-1",
-                marginTop:"0"
-            }}
-            >
+            <div className='popup' id='popup' style={{position:"absolute",width: "44%",height: "50%",transition: "1s",opacity:"0",display:"flex",flexDirection: "column",justifyContent:"center",alignItems:"center",background:"blue",zIndex:"-1",marginTop:"0"}}>
                 <label>Add Car</label>
-
                 <span style={{marginBottom: "2%"}}>Upload Image: </span>
-
-                <input id="image-file" accept="image/*" type="file" onChange={handleChange}
-                    style={{
-                        color: 'white',
-                        marginBottom: "2%"
-                    }}
-
-                    
-                    ></input>
-
-                <input style={{width:"30%"}} id="name" placeholder="Enter Car Name">
-
-                </input>
-
-                <input style={{width:"30%"}} id="model" placeholder="Enter Car Model">
-                    
-                </input>
-
+                <input id="image-file" accept="image/*" type="file" onChange={handleChange} style={{color: 'white',marginBottom: "2%"}}></input>
+                <input style={{width:"30%"}} id="name" placeholder="Enter Car Name"></input>
+                <input style={{width:"30%"}} id="model" placeholder="Enter Car Model"></input>
                 <button style={{width:"30%",height:"15%"}} onClick={addCars}> Send</button>
+                <button style={{width:"30%",height:"15%"}} onClick={closepopup}> Close</button>
             </div>
         </div>
     )

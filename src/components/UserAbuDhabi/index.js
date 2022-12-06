@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useState } from "react"
 import firebase from '../../firbase'
-import { getStorage, ref, uploadBytesResumable, getDownloadURL, listAll } from "firebase/storage";
+import { getStorage } from "firebase/storage";
 import './UserAbuDhabi.css';
 import { useNavigate } from 'react-router-dom';
  
@@ -9,12 +9,8 @@ const UserAbuDhabi= () => {
     const [user, setUser] = useState([])
     const [file, setFile] = useState("");
     const [userID, setUserID] = useState([])
-    const [imageList, setImageList] = useState([]);
     const storage = getStorage();
     var storagePath = 'uploads/' + file.name ;
-    const storageRef = ref(storage, storagePath);
-
-    const imageListRef = ref(storage, storagePath);
 var count = 0
     useEffect(() => {
         if(count === 0){
@@ -33,19 +29,6 @@ var count = 0
     , []);
 
     const getCars = async () =>{
-        // await axios.get("http://localhost:4000/user_accepted").then(res => {
-        //     console.log(res.data);
-        //     setUser([res.data]);
-        // });
-    //     const res = await fetch(`http://localhost:4000/user_accepted`, {
-    //     method: "GET",
-    //     headers: {
-    //         "Content-Type": "application/json"
-    //     }
-    // })
-
-    // const data = await res.json();
-    // setUser(data)
 
     const Location = firebase.firestore().collection("Location").doc('AbuDhabi');
     // eslint-disable-next-line
@@ -69,18 +52,6 @@ var count = 0
         count++;
         // eslint-disable-next-line
     },[])
-
-    function popup(){
-        var popup = document.getElementById("popup").style
-        popup.display = "flex";
-        popup.opacity = 1;
-        popup.zIndex = 100;
- 
-     }
-
-     function handleChange(event) {
-        setFile(event.target.files[0]);
-    }
 
     const navigate = useNavigate();
 
