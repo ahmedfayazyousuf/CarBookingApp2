@@ -61,6 +61,7 @@ const Ajman = () => {
         
         var name = document.getElementById('name').value
         var model = document.getElementById('model').value
+        var available = document.getElementById('nocars').value
 
 
         const storage = getStorage();
@@ -81,13 +82,49 @@ const Ajman = () => {
             // complete function ....
             getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
               console.log('File available at', downloadURL);
-               const Location = firebase.firestore().collection("Location").doc('Ajman');
+              const Location = firebase.firestore().collection("Cars").doc('Nissan');
 
-                Location.collection('Cars').add({
-                    imageURL:downloadURL,
-                    name:name,
-                    model:model
-                })
+              Location.collection('models').doc(`${model}`).set({
+               imageURL:downloadURL,
+               name:name,
+               model:model
+           })
+
+               Location.collection('models').doc(`${model}`).collection("timeslot").doc("timeslot9_10").set({
+                   available: available
+               })
+
+               Location.collection('models').doc(`${model}`).collection("timeslot").doc("timeslot10_11").set({
+                   available: available
+               })
+
+               Location.collection('models').doc(`${model}`).collection("timeslot").doc("timeslot11_12").set({
+                   available: available
+               })
+
+               Location.collection('models').doc(`${model}`).collection("timeslot").doc("timeslot12_13").set({
+                   available: available
+               })
+
+               Location.collection('models').doc(`${model}`).collection("timeslot").doc("timeslot13_14").set({
+                   available: available
+               })
+
+               Location.collection('models').doc(`${model}`).collection("timeslot").doc("timeslot14_15").set({
+                   available: available
+               })
+
+               Location.collection('models').doc(`${model}`).collection("timeslot").doc("timeslot15_16").set({
+                   available: available
+               })
+
+               Location.collection('models').doc(`${model}`).collection("timeslot").doc("timeslot16_17").set({
+                   available: available
+               })
+
+               Location.collection('models').doc(`${model}`).collection("timeslot").doc("timeslot17_18").set({
+                   available: available
+               })
             });
           });
         var popup = document.getElementById("popup").style
@@ -171,8 +208,11 @@ const Ajman = () => {
                 </input>
 
                 <input style={{width:"30%"}} id="model" placeholder="Enter Car Model">
+
                     
                 </input>
+
+                <input style={{width:"30%"}} id="nocars" placeholder="Enter the Number of Available Cars of this Model"></input>
 
                 <button style={{width:"30%",height:"15%"}} onClick={addCars}> Send</button>
             </div>

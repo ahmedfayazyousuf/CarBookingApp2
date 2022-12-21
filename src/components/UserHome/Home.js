@@ -2,12 +2,13 @@ import Button from '@mui/material/Button';
 import React from 'react';
 import "./Home.css";
 import { useNavigate } from 'react-router-dom';
-
+import {useLocation} from 'react-router-dom';
 
 const UserHome = () => { 
+    const location = useLocation();
     const navigate = useNavigate();
     function Handleclick(v){
-    navigate(v);
+    navigate(v, {state:{uid:location.state.uid}});
     }
 
     return (
@@ -30,20 +31,12 @@ const UserHome = () => {
                                     justifyContent:"space-between",
                                     height:"50%",
                                 }}>
-                                    <Button className="LocationButtons" color="error" variant="contained" onClick= {() => Handleclick('/UserAjman')}>
-                                        Ajman
+                                    <Button className="LocationButtons" color="error" variant="contained" onClick= {() => Handleclick('/UserAbuDhabi')}>
+                                        Nissan
                                     </Button>
 
                                     <Button className="LocationButtons" color="error" variant="contained" onClick= {() => Handleclick('/UserSharjah')}>
-                                        Sharjah
-                                    </Button>
-
-                                    <Button className="LocationButtons" color="error" variant="contained" onClick= {() => Handleclick('/UserDubai')}>
-                                        Dubai
-                                    </Button>
-
-                                    <Button className="LocationButtons" color="error" variant="contained" onClick= {() => Handleclick('/UserAbuDhabi')}>
-                                        Abu Dhabi
+                                        Infinity
                                     </Button>
                             </div>
                     </div>

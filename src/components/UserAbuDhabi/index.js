@@ -4,24 +4,24 @@ import firebase from '../../firbase'
 import { getStorage } from "firebase/storage";
 import './UserAbuDhabi.css';
 import { useNavigate } from 'react-router-dom';
- 
+import {useLocation} from 'react-router-dom';
 const UserAbuDhabi= () => {
     const [user, setUser] = useState([])
     const [file, setFile] = useState("");
     const [userID, setUserID] = useState([])
     const storage = getStorage();
     var storagePath = 'uploads/' + file.name ;
+    const location = useLocation();
 var count = 0
     useEffect(() => {
         if(count === 0){
-        const Location = firebase.firestore().collection("Location").doc('AbuDhabi');
+        const Location = firebase.firestore().collection("Cars").doc('Nissan');
         // eslint-disable-next-line
-        const Cars = Location.collection('Cars').get().then((querySnapshot) => {
+        const Cars = Location.collection('models').get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            setUserID(current => [...current, doc.id])
+            setUserID(current => [...current, doc.id]);
             setUser(current => [...current, doc.data()]);
         });
-        console.log(user)
         count += 1;
         })}
     
@@ -30,14 +30,13 @@ var count = 0
 
     const getCars = async () =>{
 
-    const Location = firebase.firestore().collection("Location").doc('AbuDhabi');
+        const Location = firebase.firestore().collection("Cars").doc('Nissan');
     // eslint-disable-next-line
-    const Cars = Location.collection('Cars').get().then((querySnapshot) => {
+    const Cars = Location.collection('models').get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         setUser(current => [...current, doc.data()]);
     });
 
-    console.log(user)
 
     })
 
@@ -56,7 +55,7 @@ var count = 0
     const navigate = useNavigate();
 
     function UserNav(v){
-        navigate(v);
+        navigate(v,{state:{uid:location.state.uid,car:"Nissan"}});
 
     }
 

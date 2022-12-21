@@ -14,6 +14,7 @@ import UserDubai from './components/UserDubai';
 import UserSharjah from './components/UserSharjah';
 import UserHome from './components/UserHome/Home';
 import TimeSlot from './components/TimeSlot';
+import UserReg from './components/UserReg';
 // import Success from "./components/Success/index";
 // import UserPage from './components/UserPage/index';
 
@@ -22,12 +23,13 @@ const App = () => {
     <>
       {/* <Navbar /> */}
       <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route exact path="/" element={<UserReg/>} />
+          <Route path="/Car" element={<Home />} />
           <Route path="/AbuDhabi" element={<AbuDhabi/>} />
           <Route path="/Ajman" element={<Ajman />} />
           <Route path="/Dubai" element={<Dubai />} />
           <Route path="/Sharjah" element={<Sharjah />} />
-          <Route path="/UserHome" element={<UserHome />} />
+          <Route path="/Cars" element={<UserHome />} />
           <Route path="/UserAbuDhabi" element={<UserAbuDhabi />} />
           <Route path="/UserAjman" element={<UserAjman />} />
           <Route path="/UserDubai" element={<UserDubai />} />

@@ -34,14 +34,6 @@ const Home = () => {
                                         Ajman
                                     </Button>
 
-                                    <Button className="LocationButtons" color="error" variant="contained" onClick= {() => Handleclick('/Sharjah')}>
-                                        Sharjah
-                                    </Button>
-
-                                    <Button className="LocationButtons" color="error" variant="contained" onClick= {() => Handleclick('/Dubai')}>
-                                        Dubai
-                                    </Button>
-
                                     <Button className="LocationButtons" color="error" variant="contained" onClick= {() => Handleclick('/AbuDhabi')}>
                                         Abu Dhabi
                                     </Button>
