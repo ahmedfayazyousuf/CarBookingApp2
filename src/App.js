@@ -1,39 +1,31 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-// import Navbar from "./components/Navbar/Navbar";
 import "./App.css";
 
-import Home from "./components/Home/Home";
-import AbuDhabi from "./components/AbuDhabi/index";
-import Ajman from "./components/Ajman/index";
-import Dubai from "./components/Dubai/index";
-import Sharjah from "./components/Sharjah/index";
-import UserAbuDhabi from './components/UserAbuDhabi';
-import UserAjman from './components/UserAjman';
-import UserDubai from './components/UserDubai';
-import UserSharjah from './components/UserSharjah';
-import UserHome from './components/UserHome/Home';
+import AdminNissan from "./components/AdminNissan/index";
+import AdminInfiniti from "./components/AdminInfiniti/index";
+import AdminChooseCompany from "./components/AdminChooseCompany/Home";
+
+import UserNissan from './components/UserNissan';
+import UserInfiniti from './components/UserInfiniti';
+import UserChooseCompany from './components/UserChooseCompany';
+
 import TimeSlot from './components/TimeSlot';
-import UserReg from './components/UserReg';
-// import Success from "./components/Success/index";
-// import UserPage from './components/UserPage/index';
+import Registration from './components/Registration';
 
 const App = () => {
   return (
     <>
-      {/* <Navbar /> */}
       <Routes>
-          <Route exact path="/" element={<UserReg/>} />
-          <Route path="/Car" element={<Home />} />
-          <Route path="/AbuDhabi" element={<AbuDhabi/>} />
-          <Route path="/Ajman" element={<Ajman />} />
-          <Route path="/Dubai" element={<Dubai />} />
-          <Route path="/Sharjah" element={<Sharjah />} />
-          <Route path="/Cars" element={<UserHome />} />
-          <Route path="/UserAbuDhabi" element={<UserAbuDhabi />} />
-          <Route path="/UserAjman" element={<UserAjman />} />
-          <Route path="/UserDubai" element={<UserDubai />} />
-          <Route path="/UserSharjah" element={<UserSharjah />} />
+          <Route exact path="/" element={<Registration/>} />
+          <Route path="/AdminNissan" element={<AdminNissan/>} />
+          <Route path="/AdminInfiniti" element={<AdminInfiniti />} />
+          <Route path="/AdminChooseCompany" element={<AdminChooseCompany/>} />
+
+          <Route path="/UserNissan" element={<UserNissan />} />
+          <Route path="/UserInfiniti" element={<UserInfiniti />} />
+          <Route path="/UserChooseCompany" element={<UserChooseCompany />} />
+
           <Route path="/User/:id" element={<TimeSlot />} />
           {/* <Route path="/Success" element={<Success />} />
           <Route path="/user/:user_id" element={<UserPage />} /> 

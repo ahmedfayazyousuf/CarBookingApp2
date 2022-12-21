@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom';
-import './AbuDhabi.css'
 import { useEffect } from "react"
 import { useState } from "react"
 import firebase from '../../firbase'

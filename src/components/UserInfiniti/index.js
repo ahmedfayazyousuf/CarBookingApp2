@@ -1,9 +1,11 @@
 import { useEffect } from "react"
 import { useState } from "react"
 import firebase from '../../firbase'
+// eslint-disable-next-line
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-const UserDubai = () => {
+const UserInfiniti = () => {
     const [user, setUser] = useState([])
+    // eslint-disable-next-line
     const [file, setFile] = useState("");
 
     const getCars = async () =>{
@@ -23,7 +25,7 @@ const UserDubai = () => {
     // const data = await res.json();
     // setUser(data)
 
-    const Location = firebase.firestore().collection("Location").doc('Dubai');
+    const Location = firebase.firestore().collection("Location").doc('Infiniti');
     // eslint-disable-next-line
     const Cars = Location.collection('Cars').get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
@@ -45,7 +47,7 @@ const UserDubai = () => {
         count++;
         // eslint-disable-next-line
     },[])
-
+    // eslint-disable-next-line
     function popup(){
         var popup = document.getElementById("popup").style
         popup.display = "flex";
@@ -53,7 +55,7 @@ const UserDubai = () => {
         popup.zIndex = 100;
  
      }
-
+     // eslint-disable-next-line
      function handleChange(event) {
         setFile(event.target.files[0]);
     }
@@ -105,4 +107,4 @@ const UserDubai = () => {
     )
 }
 
-export default UserDubai
+export default UserInfiniti

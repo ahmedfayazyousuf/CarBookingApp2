@@ -2,14 +2,18 @@ import { useEffect } from "react"
 import { useState } from "react"
 import firebase from '../../firbase'
 import { getStorage } from "firebase/storage";
-import './UserAbuDhabi.css';
+import './UserNissan.css';
 import { useNavigate } from 'react-router-dom';
 import {useLocation} from 'react-router-dom';
-const UserAbuDhabi= () => {
+const UserNissan= () => {
     const [user, setUser] = useState([])
+    // eslint-disable-next-line
     const [file, setFile] = useState("");
+    // eslint-disable-next-line
     const [userID, setUserID] = useState([])
+    // eslint-disable-next-line
     const storage = getStorage();
+    // eslint-disable-next-line
     var storagePath = 'uploads/' + file.name ;
     const location = useLocation();
 var count = 0
@@ -24,7 +28,7 @@ var count = 0
         });
         count += 1;
         })}
-    
+        // eslint-disable-next-line
     count += 1;}
     , []);
 
@@ -42,6 +46,7 @@ var count = 0
 
     // console.log(Cars)
     }
+    // eslint-disable-next-line
     var count = 0;
     useEffect(()=>{
 
@@ -82,7 +87,7 @@ var count = 0
     )
 }
 
-export default UserAbuDhabi
+export default UserNissan
 
 
 
