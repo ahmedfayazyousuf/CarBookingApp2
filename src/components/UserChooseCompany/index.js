@@ -1,4 +1,6 @@
 import NissanLogo from '../nissanlogo.png';
+import ChooseNissan from './choosenissan.png';
+import ChooseInfiniti from './chooseinfiniti.png';
 import Button from '@mui/material/Button';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -30,54 +32,30 @@ const UserChooseCompany = () => {
 
 
 
-            <div style={{display: 'flex', flexDirection: 'row', textAlign: 'center', margin: '0', padding: '0'}} >
-                <div style={{width: '50%', backgroundColor: 'red'}}>
-                    <h1>NISSAN</h1>
-                </div>
-
-                <div style={{width: '50%', backgroundColor: 'blue'}}>
-                    <h1>INFINITI</h1>
-                </div>
-            </div>
-
-
-
-
-
-
-
-
-            {/* <div className="form-body" style={{height:"100vh"}}>
-                <div className="form-items">
-                    <div class="container" className="profilepanel" style={
-                        {
-                            display:"flex",
-                            flexDirection:"column",
-                            alignItems:"center",
-                            justifyContent:"center",
-                            height:"100vh",
-                        }}>
-                            <div class="container" className="profilepanel" style={
-                                {
-                                    display:"flex",
-                                    flexDirection:"column",
-                                    alignItems:"center",
-                                    justifyContent:"space-between",
-                                    height:"50%",
-                                }}>
-                                    <Button className="LocationButtons" color="error" variant="contained" onClick= {() => Handleclick('/UserAbuDhabi')}>
-                                        Nissan
-                                    </Button>
-
-                                    <Button className="LocationButtons" color="error" variant="contained" onClick= {() => Handleclick('/UserSharjah')}>
-                                        Infinity
-                                    </Button>
-                            </div>
+            <div style={{display: 'flex', flexDirection: 'row', textAlign: 'center', justifyContent: 'center', alignItems: 'center', margin: '0', padding:'0'}} >
+                <div style={{width: '50%'}}>
+                    <div style={{width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+                        <div className="content content-1">
+                            <div className="fab"></div>
+                            <img src={ChooseNissan} alt="Logo" style={{width: '20vh'}}/>
+                            <Button color="success" variant="contained" onClick= {() => Handleclick('/UserNissan')}>Nissan</Button>   
+                        </div>
                     </div>
                 </div>
-            </div> */}
+
+                <div style={{width: '50%'}}>
+                    <div style={{width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+                        <div className="content content-1">
+                            <div className="fab"></div>
+                            <img src={ChooseInfiniti} alt="Logo" style={{width: '10vh'}}/>  
+                            <Button color="success" variant="contained" onClick= {() => Handleclick('/UserInfiniti')}>Infinity</Button>
+                            </div>
+                        </div>
+                </div>
+            </div>
         </>
     )
 }
 
 export default UserChooseCompany
+
