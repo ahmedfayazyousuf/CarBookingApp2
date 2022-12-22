@@ -46,7 +46,7 @@ const TimeSlot = () => {
         Location.collection('models').doc(`${id}`).collection('timeslot').doc(`${doc.id}`).get().then((doc2)=>{
             console.log()
             if(doc2.data().available===0){
-                document.getElementById(`${doc.id}`).remove();
+                document.getElementById(`${doc.id}`).disabled = true;
             }
         })
         setUser(current => [...current, doc.data()]);
