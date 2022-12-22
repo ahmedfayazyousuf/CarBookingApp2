@@ -1,3 +1,4 @@
+import NissanLogo from '../nissanlogo.png';
 import { useEffect } from "react"
 import { useState } from "react"
 import firebase from '../../firbase'
@@ -105,20 +106,41 @@ const TimeSlot = () => {
         }
     
     return(
-        <div style={{
-            display:"flex",
-            flexDirection:"column",
-            height:"100vh",
-            justifyContent:"center",
-            alignItems:"center"
-        }}>,
-            <div style={{
-            display:"flex",
-            flexDirection:"column",
-            height:"50%",
-            justifyContent:"center",
-            alignItems:"center"
-        }}>
+        <>
+            <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop:'5vh'}}>
+                <img src={NissanLogo} alt="Logo" style={{width: '20vh'}}/>
+            </div>
+
+            <div style={{display: 'flex', flexDirection: 'column', textAlign: 'center', margin: '0', padding: '0'}} >
+                <h1 style={{fontSize: '30px', marginTop: '20px', marginBottom: '-8px'}} >GET READY TO</h1>
+                <h1 className='explore' style={{fontSize: '46px', margin: '-12px'}}>EXPLORE</h1>
+                <h1 style={{fontSize: '24px'}}>MORE. TOGETHER.</h1>
+            </div>
+
+            <div style={{display: 'flex', flexDirection: 'column', textAlign: 'center', margin: '0', padding: '0'}} >
+                <p style={{fontSize: '15px', marginTop: '10px'}} >Please select a time slot for your test drive.</p>
+            </div>
+
+            <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems:'center', width: '100%', backgroundColor: 'yellow'}}>
+                <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems:'center', width: '70%', backgroundColor: 'red'}}>
+                    <button className="grab" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>9:00 AM</button>
+                    <button className="grab" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>9:00 AM</button>
+                    <button className="grab" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>9:00 AM</button>
+                    <button className="grab" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>9:00 AM</button>
+                </div>
+
+                <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems:'center', width: '70%', backgroundColor: 'blue'}}>
+                    <button className="grab" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>9:00 AM</button>
+                    <button className="grab" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>9:00 AM</button>
+                    <button className="grab" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>9:00 AM</button>
+                    <button className="grab" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>9:00 AM</button>
+                </div>
+            </div>
+
+
+
+        <div style={{display:"flex",flexDirection:"column",height:"100vh",justifyContent:"center",alignItems:"center"}}>
+            <div style={{display:"flex",flexDirection:"column",height:"50%",justifyContent:"center",alignItems:"center"}}>
                 <h1 style={{color:"white"}}>Cars Available</h1>
                 {/* <table style={{color:"white"}}>
                 <thead>
@@ -158,6 +180,7 @@ const TimeSlot = () => {
 
            
         </div>
+        </>
     )
 }
 

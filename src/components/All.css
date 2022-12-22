@@ -46,3 +46,5 @@ h1, p, a, .std{
 h1, p, a{
     font-family: myFant;
 }
+
+.grab {cursor: -webkit-grab; cursor: grab;}

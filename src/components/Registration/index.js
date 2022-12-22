@@ -54,7 +54,7 @@ const Registration = () =>{
                         <label>Phone</label>
                         <input type="number" id='no' style={{marginLeft: '10px', width:"80%"}} />
                     </div>
-                    <button style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'white', backgroundColor: 'black'}} onClick={HandleSubmit}>Login</button>
+                    <button className="grab" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'white', backgroundColor: 'black'}} onClick={HandleSubmit}>Login</button>
                 </div>
                 
             </div>
