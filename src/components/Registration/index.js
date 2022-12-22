@@ -17,7 +17,7 @@ const Registration = () =>{
             Number:Number
         }).then(function(docRef) {
             console.log("Document written with ID: ", docRef.id);
-            navigate("/Cars",{state:{uid:docRef.id}});
+            navigate("/UserChooseCompany",{state:{uid:docRef.id}});
         })
         .catch(function(error) {
             console.error("Error adding document: ", error);

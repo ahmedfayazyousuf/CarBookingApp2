@@ -32,8 +32,7 @@ const App = () => {
           <Route path="/Success" element={<Success />} />
           <Route path="/Error" element={<Error />} />
 
-          {/* <Route path="/user/:user_id" element={<UserPage />} /> 
-          <Route path="*" element={<Errorpage />} /> */}
+          {/* <Route path="/user/:user_id" element={<UserPage />} />  */}
       </Routes>
     </>
   )
