@@ -1,43 +1,52 @@
 import { useEffect } from "react"
 import { useState } from "react"
 import firebase from '../../firbase'
-// eslint-disable-next-line
-import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-const UserInfiniti = () => {
+import { getStorage } from "firebase/storage";
+import './UserInfiniti.css';
+import { useNavigate } from 'react-router-dom';
+import {useLocation} from 'react-router-dom';
+const UserInfiniti= () => {
     const [user, setUser] = useState([])
     // eslint-disable-next-line
     const [file, setFile] = useState("");
+    // eslint-disable-next-line
+    const [userID, setUserID] = useState([])
+    // eslint-disable-next-line
+    const storage = getStorage();
+    // eslint-disable-next-line
+    var storagePath = 'uploads/' + file.name ;
+    const location = useLocation();
+var count = 0
+    useEffect(() => {
+        if(count === 0){
+        const Location = firebase.firestore().collection("Cars").doc('Infinity');
+        // eslint-disable-next-line
+        const Cars = Location.collection('models').get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            setUserID(current => [...current, doc.id]);
+            setUser(current => [...current, doc.data()]);
+        });
+        count += 1;
+        })}
+        // eslint-disable-next-line
+    count += 1;}
+    , []);
 
     const getCars = async () =>{
 
-
-        // await axios.get("http://localhost:4000/user_accepted").then(res => {
-        //     console.log(res.data);
-        //     setUser([res.data]);
-        // });
-    //     const res = await fetch(`http://localhost:4000/user_accepted`, {
-    //     method: "GET",
-    //     headers: {
-    //         "Content-Type": "application/json"
-    //     }
-    // })
-
-    // const data = await res.json();
-    // setUser(data)
-
-    const Location = firebase.firestore().collection("Location").doc('Infiniti');
+        const Location = firebase.firestore().collection("Cars").doc('Infinity');
     // eslint-disable-next-line
-    const Cars = Location.collection('Cars').get().then((querySnapshot) => {
+    const Cars = Location.collection('models').get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         setUser(current => [...current, doc.data()]);
     });
 
-    console.log(user)
 
     })
 
     // console.log(Cars)
     }
+    // eslint-disable-next-line
     var count = 0;
     useEffect(()=>{
 
@@ -47,64 +56,39 @@ const UserInfiniti = () => {
         count++;
         // eslint-disable-next-line
     },[])
-    // eslint-disable-next-line
-    function popup(){
-        var popup = document.getElementById("popup").style
-        popup.display = "flex";
-        popup.opacity = 1;
-        popup.zIndex = 100;
- 
-     }
-     // eslint-disable-next-line
-     function handleChange(event) {
-        setFile(event.target.files[0]);
+
+    const navigate = useNavigate();
+
+    function UserNav(v){
+        navigate(v,{state:{uid:location.state.uid,car:"Infinity"}});
+
     }
 
     
     return(
-        <div style={{
-            display:"flex",
-            flexDirection:"column",
-            height:"100vh",
-            justifyContent:"center",
-            alignItems:"center"
-        }}>,
-            <div style={{
-            display:"flex",
-            flexDirection:"column",
-            height:"50%",
-            justifyContent:"center",
-            alignItems:"center"
-        }}>
-                <h1 style={{color:"white"}}>Cars Available</h1>
-                {/* <table style={{color:"white"}}>
-                <thead>
-                    <tr>
-                        <th>Car</th>
-                        <th>Model</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {user.map((user) => {
-                        return <tr key={user.name}>
-                        <td>{user.name}</td>
-                        <td>{user.model}</td>
-                        </tr> 
-                    })}
-                </tbody>
-            </table> */}
-
-            {user.map((user) => {
-                        return <button>
-                        <span>{user.name}</span>
-                        <span>{user.model}</span>
-                        </button> 
-                    })}
+        <div style={{display:"flex",flexDirection:"column",height:"100vh",alignItems:"center"}}>,
+            <div style={{display:"flex",flexDirection:"column",height:"50%",alignItems:"center"}}>
+                <div className="cards">
+                    <h1>Available Cars</h1>
+                    <div className="services">
+                        {user.map((user,index) => {
+                            return <div className="content content-1">
+                            <div className="fab"></div>
+                                <img src={user.imageURL} alt="car" style={{height: '150px', width: '200px'}}/>
+                                <h2>{user.name}</h2>
+                                <p>{user.model}</p>
+                                <button onClick= {() => UserNav(`/User/${userID[index]}`)}>BOOK</button>    
+                            </div>
+                        })}
+                    </div>
+                </div>
             </div>
-
-           
         </div>
     )
 }
 
 export default UserInfiniti
+
+
+
+
