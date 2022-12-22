@@ -127,29 +127,20 @@ const TimeSlot = () => {
                     <button className="grab" id="timeslot10_11" onClick={() => {Handleclick("timeslot10_11")}} style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>10:00 AM</button>
                     <button className="grab" id="timeslot11_12" onClick={() => {Handleclick("timeslot11_12")}} style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>11:00 AM</button>
                     <button className="grab" id="timeslot12_13" onClick={() => {Handleclick("timeslot12_13")}} style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>12:00 PM</button>
+                    <button className="grab" id="timeslot13_14" onClick={() => {Handleclick("timeslot13_14")}} style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>1:00 PM</button>
                 </div>
 
                 <div className="slotdiv" style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems:'center', width: '70%'}}>
-                    <button className="grab" id="timeslot13_14" onClick={() => {Handleclick("timeslot13_14")}} style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>1:00 PM</button>
                     <button className="grab" id="timeslot14_15" onClick={() => {Handleclick("timeslot14_15")}} style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>2:00 PM</button>
                     <button className="grab" id="timeslot15_16" onClick={() => {Handleclick("timeslot15_16")}} style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>3:00 PM</button>
                     <button className="grab" id="timeslot16_17" onClick={() => {Handleclick("timeslot16_17")}} style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>4:00 PM</button>
+                    <button className="grab" id="timeslot17_18" onClick={() => {Handleclick("timeslot17_18")}} style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>5:00 PM</button>
                 </div>
 
                 <button className="grab" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'white', backgroundColor: 'black'}}>Next</button>
 
 
             </div>
-
-                    {/* <button id="timeslot9_10" onClick={() => {Handleclick("timeslot9_10")}}>9-10</button>
-                    <button id="timeslot10_11" onClick={() => {Handleclick("timeslot10_11")}}>10-11</button>
-                    <button id="timeslot11_12" onClick={() => {Handleclick("timeslot11_12")}}>11-12</button>
-                    <button id="timeslot12_13" onClick={() => {Handleclick("timeslot12_13")}}>12-13</button>
-                    <button id="timeslot13_14" onClick={() => {Handleclick("timeslot13_14")}}>13-14</button>
-                    <button id="timeslot14_15" onClick={() => {Handleclick("timeslot14_15")}}>14-15</button>
-                    <button id="timeslot15_16" onClick={() => {Handleclick("timeslot15_16")}}>15-16</button>
-                    <button id="timeslot16_17" onClick={() => {Handleclick("timeslot16_17")}}>16-17</button>
-                    <button id="timeslot17_18" onClick={() => {Handleclick("timeslot17_18")}}>17-18</button> */}
         </>
     )
 }
