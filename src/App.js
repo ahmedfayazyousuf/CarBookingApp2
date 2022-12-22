@@ -10,6 +10,8 @@ import UserNissan from './components/UserNissan';
 import UserInfiniti from './components/UserInfiniti';
 import UserChooseCompany from './components/UserChooseCompany';
 
+import Success from './components/Success';
+import Error from './components/Error';
 import TimeSlot from './components/TimeSlot';
 import Registration from './components/Registration';
 
@@ -27,8 +29,10 @@ const App = () => {
           <Route path="/UserChooseCompany" element={<UserChooseCompany />} />
 
           <Route path="/User/:id" element={<TimeSlot />} />
-          {/* <Route path="/Success" element={<Success />} />
-          <Route path="/user/:user_id" element={<UserPage />} /> 
+          <Route path="/Success" element={<Success />} />
+          <Route path="/Error" element={<Error />} />
+
+          {/* <Route path="/user/:user_id" element={<UserPage />} /> 
           <Route path="*" element={<Errorpage />} /> */}
       </Routes>
     </>
