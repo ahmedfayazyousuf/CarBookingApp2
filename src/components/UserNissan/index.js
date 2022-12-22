@@ -61,7 +61,7 @@ var count = 0
     const navigate = useNavigate();
 
     function UserNav(v){
-        navigate(v,{state:{uid:location.state.uid,car:"Nissan"}});
+        navigate(v,{state:{uid:location.state.uid,car:"Nissan",count:location.state.count}});
 
     }
 

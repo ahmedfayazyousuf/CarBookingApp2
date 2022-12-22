@@ -10,7 +10,7 @@ const UserChooseCompany = () => {
     const location = useLocation();
     const navigate = useNavigate();
     function Handleclick(v){
-    navigate(v, {state:{uid:location.state.uid}});
+    navigate(v, {state:{uid:location.state.uid,count:location.state.count}});
     }
 
     return (

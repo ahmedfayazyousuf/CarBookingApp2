@@ -1,8 +1,21 @@
 import '../All.css';
 import NissanLogo from '../nissanlogo.png';
 import TickIcon from './tickicon.png';
-
+import {useLocation} from 'react-router-dom';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 const Success = () =>{
+    const location = useLocation();
+    const navigate = useNavigate();
+    useEffect(()=>{
+        if(location.state.count >= 1){
+            document.getElementById('return').style.display = "none";
+        }
+    })
+
+    function HandleSubmit(){
+        navigate("/UserChooseCompany", {state:{uid:location.state.uid,count:location.state.count+1}});
+    }
 
     return(
         <>
@@ -23,6 +36,8 @@ const Success = () =>{
             <div style={{display: 'flex', flexDirection: 'column', textAlign: 'center', margin: '0', padding: '0'}} >
                 <p style={{fontSize: '15px', marginTop: '10px'}} >Thank you! We will be sending you a confirmation email shortly.</p>
             </div>
+
+            <button className="grab" id='return' style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'white', backgroundColor: 'black'}} onClick={HandleSubmit}>Want to book again?</button>
         </>
     )
 }

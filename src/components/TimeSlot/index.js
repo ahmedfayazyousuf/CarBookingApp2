@@ -9,12 +9,14 @@ import ReactTimeslotCalendar from 'react-timeslot-calendar';
 import moment from 'moment';
 import {useLocation} from 'react-router-dom';
 import { useParams } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 const TimeSlot = () => {
     const [user, setUser] = useState([])
     const [file, setFile] = useState("");
     const location = useLocation();
     const { id } = useParams();
+    const navigate = useNavigate();
 
     console.log(location.state.uid)
     const getCars = async () =>{
@@ -88,20 +90,47 @@ const TimeSlot = () => {
 
         function Handleclick(e){
             console.log(user)
+
+
             const Location = firebase.firestore().collection("Cars").doc(`${location.state.car}`);
             const User = firebase.firestore().collection("Users").doc(`${location.state.uid}`);
-            Location.collection('models').doc(`${id}`).collection('timeslot').doc(e).get().then((doc2)=>{
-                if(doc2.data().available !== 0){
-                    Location.collection('models').doc(`${id}`).collection('timeslot').doc(e).update({available : firebase.firestore.FieldValue.increment(-1)})
-                    User.update({
-                        Timeslot: e,
-                        Car: `${location.state.car}`,
-                        Model: `${id}`,
-                    });
-                }else{
-                    console.log("oops it got booked")
-                }
-            })
+
+            if(location.state.count === 0){
+                Location.collection('models').doc(`${id}`).collection('timeslot').doc(e).get().then((doc2)=>{
+                    if(doc2.data().available !== 0){
+                        Location.collection('models').doc(`${id}`).collection('timeslot').doc(e).update({available : firebase.firestore.FieldValue.increment(-1)})
+                        User.update({
+                            Timeslot: e,
+                            Car: `${location.state.car}`,
+                            Model: `${id}`,
+                            Count: firebase.firestore.FieldValue.increment(1)
+                        });
+                    }else{
+                        console.log("oops it got booked")
+                    }
+                }).then(()=>{
+                    navigate("/success",{state:{uid:location.state.uid,count:location.state.count}});
+                })
+            }
+
+            else{
+                Location.collection('models').doc(`${id}`).collection('timeslot').doc(e).get().then((doc2)=>{
+                    if(doc2.data().available !== 0){
+                        Location.collection('models').doc(`${id}`).collection('timeslot').doc(e).update({available : firebase.firestore.FieldValue.increment(-1)})
+                        User.update({
+                            Timeslot2: e,
+                            Car2: `${location.state.car}`,
+                            Model2: `${id}`,
+                            Count: firebase.firestore.FieldValue.increment(1)
+                        });
+                    }else{
+                        console.log("oops it got booked")
+                    }
+                }).then(()=>{
+                    navigate("/success",{state:{uid:location.state.uid,count:location.state.count}});
+                })
+            }
+            
             
         }
     
