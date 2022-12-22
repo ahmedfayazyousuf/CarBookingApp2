@@ -1,3 +1,4 @@
+import NissanLogo from '../nissanlogo.png';
 import { useEffect } from "react"
 import { useState } from "react"
 import firebase from '../../firbase'
@@ -66,10 +67,24 @@ var count = 0
 
     
     return(
+        <>
+        <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop:'5vh'}}>
+                <img src={NissanLogo} alt="Logo" style={{width: '20vh'}}/>
+            </div>
+
+            <div style={{display: 'flex', flexDirection: 'column', textAlign: 'center', margin: '0', padding: '0'}} >
+                <h1 style={{fontSize: '30px', marginTop: '20px', marginBottom: '-8px'}} >GET READY TO</h1>
+                <h1 className='explore' style={{fontSize: '46px', margin: '-12px'}}>EXPLORE</h1>
+                <h1 style={{fontSize: '24px'}}>MORE. TOGETHER.</h1>
+            </div>
+
+            <div style={{display: 'flex', flexDirection: 'column', textAlign: 'center', margin: '0', padding: '0'}} >
+                <p style={{fontSize: '15px', marginTop: '10px'}}>Please select a car to test drive</p>
+            </div>
+
         <div style={{display:"flex",flexDirection:"column",height:"100vh",alignItems:"center"}}>,
             <div style={{display:"flex",flexDirection:"column",height:"50%",alignItems:"center"}}>
                 <div className="cards">
-                    <h1>Available Cars</h1>
                     <div className="services">
                         {user.map((user,index) => {
                             return <div className="content content-1">
@@ -83,7 +98,8 @@ var count = 0
                     </div>
                 </div>
             </div>
-        </div>
+        </div> 
+        </>
     )
 }
 
