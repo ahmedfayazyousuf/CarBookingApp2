@@ -5,12 +5,37 @@ import Button from '@mui/material/Button';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import {useLocation} from 'react-router-dom';
+import { useState } from 'react';
 
 const UserChooseCompany = () => { 
     const location = useLocation();
     const navigate = useNavigate();
+
+    const [car, setCar] = useState('');
+
     function Handleclick(v){
+        if(car === ''){
+            return;
+        }
+        
     navigate(v, {state:{uid:location.state.uid,count:location.state.count}});
+    }
+
+    function carClick(e){
+
+        if(e === 'nissan'){
+            setCar('/UserNissan');
+            document.getElementById(e).style.background = "red";
+            document.getElementById('infiniti').style.background = "transparent";
+
+        }
+
+        if (e === 'infiniti'){
+            setCar('/UserInfiniti');
+            document.getElementById(e).style.background = "red";
+            document.getElementById('nissan').style.background = "transparent";
+        }
+        
     }
 
     return (
@@ -32,27 +57,33 @@ const UserChooseCompany = () => {
 
 
 
-            <div style={{display: 'flex', flexDirection: 'row', textAlign: 'center', justifyContent: 'center', alignItems: 'center', margin: '0', padding:'0'}} >
+            <div style={{display: 'flex', flexDirection: 'row', textAlign: 'center', justifyContent: 'center', alignItems: 'center', margin: '0', padding:'0', gap:"50px"}} >
                 <div style={{width: '50%'}}>
-                    <div style={{width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-                        <div className="content content-1">
+                    <div style={{width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-end'}}>
+                        <div id='nissan' className="content content-1" onClick={()=>{carClick('nissan')}}>
                             <div className="fab"></div>
                             <img src={ChooseNissan} alt="Logo" style={{width: '20vh'}}/>
-                            <Button color="success" variant="contained" onClick= {() => Handleclick('/UserNissan')}>Nissan</Button>   
+                            {/* <Button color="success" variant="contained" onClick= {() => Handleclick('/UserNissan')}>Nissan</Button>    */}
                         </div>
                     </div>
                 </div>
 
                 <div style={{width: '50%'}}>
-                    <div style={{width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-                        <div className="content content-1">
+                    <div style={{width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start'}}>
+                        <div id='infiniti' className="content content-1" onClick={()=>{carClick('infiniti')}}>
                             <div className="fab"></div>
                             <img src={ChooseInfiniti} alt="Logo" style={{width: '10vh'}}/>  
-                            <Button color="success" variant="contained" onClick= {() => Handleclick('/UserInfiniti')}>Infinity</Button>
+                            {/* <Button color="success" variant="contained" onClick= {() => Handleclick('/UserInfiniti')}>Infinity</Button> */}
                             </div>
                         </div>
                 </div>
             </div>
+
+            <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop:'5vh'}} >
+                <Button color="success" variant="contained" onClick= {() => Handleclick(car)}>Next</Button> 
+            </div>
+
+              
         </>
     )
 }
