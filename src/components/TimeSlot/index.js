@@ -131,10 +131,6 @@ const TimeSlot = () => {
                 </div>
 
                 <div className="slotdiv" style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems:'center', width: '70%'}}>
-<<<<<<< Updated upstream
-=======
-                   
->>>>>>> Stashed changes
                     <button className="grab" id="timeslot14_15" onClick={() => {Handleclick("timeslot14_15")}} style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>2:00 PM</button>
                     <button className="grab" id="timeslot15_16" onClick={() => {Handleclick("timeslot15_16")}} style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>3:00 PM</button>
                     <button className="grab" id="timeslot16_17" onClick={() => {Handleclick("timeslot16_17")}} style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>4:00 PM</button>
