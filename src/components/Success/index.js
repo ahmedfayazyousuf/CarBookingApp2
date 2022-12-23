@@ -33,11 +33,13 @@ const Success = () =>{
                 <img src={TickIcon} alt="Tick Mark" style={{width: '10vh'}}/>
             </div>
 
-            <div style={{display: 'flex', flexDirection: 'column', textAlign: 'center', margin: '0', padding: '0'}} >
+            <div style={{display: 'flex', flexDirection: 'column', textAlign: 'center', margin: '0', padding: '0', marginTop: '25px'}} >
                 <p style={{fontSize: '15px', marginTop: '10px'}} >Thank you! We will be sending you a confirmation email shortly.</p>
             </div>
 
-            <button className="grab" id='return' style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'white', backgroundColor: 'black'}} onClick={HandleSubmit}>Want to book again?</button>
+            <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop:'5vh'}}>
+                <button className="grab" id='return' style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'white', backgroundColor: 'black'}} onClick={HandleSubmit}>Book Another Slot</button>
+            </div>
         </>
     )
 }
