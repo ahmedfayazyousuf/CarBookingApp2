@@ -65,19 +65,20 @@ const Registration = () =>{
         
     }
 
-    useEffect(()=>{
-        document.body.style.backgroundImage = `url(${process.env.PUBLIC_URL + '/desktop.jpg'})` 
-    },[])
+    // useEffect(()=>{
+    //     document.body.style.backgroundImage = `url(${process.env.PUBLIC_URL + '/desktop.jpg'})` 
+    // },[])
     return(
-        <>
-            <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop:'5vh'}}>
-                <img src={NissanLogo} alt="Logo" style={{width: '20vh'}}/>
+        <div style={{height: '100vh', width: '100vw', backgroundImage: `url("desktop.jpg")`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed', backgroundSize: 'cover', margin: '0', padding: '0'}}>
+        
+            <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+                <img src={NissanLogo} alt="Logo" style={{width: '25vh', marginTop: '30px', marginBottom: '10px'}}/>
             </div>
 
             <div style={{display: 'flex', flexDirection: 'column', textAlign: 'center', margin: '0', padding: '0'}} >
-                <h1 style={{fontSize: '30px', marginTop: '20px', marginBottom: '-8px'}} >GET READY TO</h1>
-                <h1 className='explore' style={{fontSize: '46px', margin: '-12px'}}>EXPLORE</h1>
-                <h1 style={{fontSize: '24px'}}>MORE. TOGETHER.</h1>
+                <h1 style={{fontSize: '45px', marginTop: '20px', marginBottom: '-8px'}} >GET READY TO</h1>
+                <h1 className='explore' style={{fontSize: '66px', margin: '-24px'}}>EXPLORE</h1>
+                <h1 style={{fontSize: '34px', marginBottom: '10px'}}>MORE. TOGETHER.</h1>
             </div>
 
             <div style={{display:"flex", flexDirection:"column", width:"100vw", height: "30vh", justifyContent:"center", alignItems:"center"}}>
@@ -102,11 +103,11 @@ const Registration = () =>{
                         </div>
                     </div>
 
-                    <button className="grab" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'white', backgroundColor: 'black'}} onClick={HandleSubmit}>Login</button>
+                    <button className="grab" style={{width:"150px", marginTop: '30px', margin: '10px', borderRadius: '10px', padding: '10px', color: 'white', backgroundColor: 'black'}} onClick={HandleSubmit}>Login</button>
                 </div>
                 
             </div>
-        </>
+        </div>
     )
 }
 

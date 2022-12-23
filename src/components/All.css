@@ -47,7 +47,10 @@ h1, p, a{
     font-family: myFant;
 }
 
-.grab {cursor: -webkit-grab; cursor: grab;}
+.grab {
+    cursor: -webkit-grab; 
+    cursor: grab;
+}
 
 @media only screen and (max-width: 600px) {
     .slotparent{

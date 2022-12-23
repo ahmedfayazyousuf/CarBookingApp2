@@ -1,3 +1,4 @@
+import './UserNissan.css';
 import NissanLogo from '../nissanlogo.png';
 import ChooseNissan from './choosenissan.png';
 import ChooseInfiniti from './chooseinfiniti.png';
@@ -37,9 +38,9 @@ const UserChooseCompany = () => {
         
     }
 
-    useEffect(()=>{
-        document.body.style.backgroundImage = `url(${process.env.PUBLIC_URL + '/desktop2.png'})` 
-    },[])
+    // useEffect(()=>{
+    //     document.body.style.backgroundImage = `url(${process.env.PUBLIC_URL + '/desktop2.png'})` 
+    // },[])
 
     return (
         <>
