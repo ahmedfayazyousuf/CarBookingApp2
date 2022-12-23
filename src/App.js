@@ -14,6 +14,7 @@ import Success from './components/Success';
 import Error from './components/Error';
 import TimeSlot from './components/TimeSlot';
 import Registration from './components/Registration';
+import DinnerRegistration from './components/DinnerRegistration';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
       <Routes>
           <Route exact path="/" element={<Registration/>} />
           <Route path="/:id" element={<Registration/>} />
+          <Route exact path="/DinnerRegistration" element={<DinnerRegistration/>} />
 
           <Route path="/AdminNissan" element={<AdminNissan/>} />
           <Route path="/AdminInfiniti" element={<AdminInfiniti />} />
