@@ -76,6 +76,59 @@ var count = 0
     }
 
     function carClick(e){
+        if(e === 'QX80'){
+            document.getElementById(e).style.background = "rgb(200, 197, 197)";
+            document.getElementById('QX60').style.background = "transparent";
+            document.getElementById('QX55').style.background = "transparent";
+            document.getElementById('Q60').style.background = "transparent";
+            document.getElementById('Q60_2').style.background = "transparent";
+            document.getElementById('QX50').style.background = "transparent";
+        }
+
+        if(e === 'QX60'){
+            document.getElementById(e).style.background = "rgb(200, 197, 197)";
+            document.getElementById('QX80').style.background = "transparent";
+            document.getElementById('QX55').style.background = "transparent";
+            document.getElementById('Q60').style.background = "transparent";
+            document.getElementById('Q60_2').style.background = "transparent";
+            document.getElementById('QX50').style.background = "transparent";
+        }
+
+        if(e === 'QX55'){
+            document.getElementById(e).style.background = "rgb(200, 197, 197)";
+            document.getElementById('QX80').style.background = "transparent";
+            document.getElementById('QX60').style.background = "transparent";
+            document.getElementById('Q60').style.background = "transparent";
+            document.getElementById('Q60_2').style.background = "transparent";
+            document.getElementById('QX50').style.background = "transparent";
+        }
+
+        if(e === 'Q60'){
+            document.getElementById(e).style.background = "rgb(200, 197, 197)";
+            document.getElementById('QX80').style.background = "transparent";
+            document.getElementById('QX60').style.background = "transparent";
+            document.getElementById('QX55').style.background = "transparent";
+            document.getElementById('Q60_2').style.background = "transparent";
+            document.getElementById('QX50').style.background = "transparent";
+        }
+
+        if(e === 'Q60_2'){
+            document.getElementById(e).style.background = "rgb(200, 197, 197)";
+            document.getElementById('QX80').style.background = "transparent";
+            document.getElementById('QX60').style.background = "transparent";
+            document.getElementById('QX55').style.background = "transparent";
+            document.getElementById('Q60').style.background = "transparent";
+            document.getElementById('QX50').style.background = "transparent";
+        }
+
+        if(e === 'QX50'){
+            document.getElementById(e).style.background = "rgb(200, 197, 197)";
+            document.getElementById('QX80').style.background = "transparent";
+            document.getElementById('QX60').style.background = "transparent";
+            document.getElementById('QX55').style.background = "transparent";
+            document.getElementById('Q60').style.background = "transparent";
+            document.getElementById('Q60_2').style.background = "transparent";
+        }
 
 
     }
