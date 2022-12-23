@@ -3,7 +3,7 @@ import { useEffect } from "react"
 import { useState } from "react"
 import firebase from '../../firbase'
 import { getStorage } from "firebase/storage";
-import './UserNissan.css';
+import '../UserNissan.css';
 import { useNavigate } from 'react-router-dom';
 import {useLocation} from 'react-router-dom';
 const UserNissan= () => {

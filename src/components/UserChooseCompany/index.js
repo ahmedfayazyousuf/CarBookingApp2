@@ -24,14 +24,14 @@ const UserChooseCompany = () => {
 
         if(e === 'nissan'){
             setCar('/UserNissan');
-            document.getElementById(e).style.background = "rgb(187, 183, 183)";
+            document.getElementById(e).style.background = "rgb(200, 197, 197)";
             document.getElementById('infiniti').style.background = "transparent";
 
         }
 
         if (e === 'infiniti'){
             setCar('/UserInfiniti');
-            document.getElementById(e).style.background = "rgb(187, 183, 183)";
+            document.getElementById(e).style.background = "rgb(200, 197, 197)";
             document.getElementById('nissan').style.background = "transparent";
         }
         
