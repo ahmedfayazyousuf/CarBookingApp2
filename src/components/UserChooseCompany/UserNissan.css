@@ -40,9 +40,9 @@ body, html{
   flex-wrap: wrap;
   flex: 1;
   min-width: 300px;
-  min-width: 300px;
-  max-height: 200px;
-  min-height: 200px;
+  /* min-width: 300px; */
+  /* max-height: 200px;
+  min-height: 200px; */
   margin: 20px;
   border: 2px solid black;
   border-radius: 10px;

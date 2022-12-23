@@ -67,6 +67,7 @@ var count = 0
     
     return(
         <>
+        <div style={{width:"100vw", overflowY:"scroll"}}>
         <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop:'5vh'}}>
                 <img src={NissanLogo} alt="Logo" style={{width: '20vh'}}/>
             </div>
@@ -80,24 +81,25 @@ var count = 0
             <div style={{display: 'flex', flexDirection: 'column', textAlign: 'center', margin: '0', padding: '0'}} >
                 <p style={{fontSize: '15px', marginTop: '10px'}}>Please select a car to test drive</p>
             </div>
-
-        <div style={{display:"flex",flexDirection:"column",height:"100vh",alignItems:"center"}}>,
-            <div style={{display:"flex",flexDirection:"column",height:"50%",alignItems:"center"}}>
-                <div className="cards">
-                    <div className="services">
-                        {user.map((user,index) => {
-                            return <div className="content content-1">
-                            <div className="fab"></div>
-                                <img src={user.imageURL} alt="car" style={{height: '150px', width: '200px'}}/>
-                                <h2>{user.name}</h2>
-                                <p>{user.model}</p>
-                                <button onClick= {() => UserNav(`/User/${userID[index]}`)}>BOOK</button>    
-                            </div>
-                        })}
+        
+            <div style={{display:"flex",flexDirection:"column",height:"100vh",alignItems:"center"}}>,
+                <div style={{display:"flex",flexDirection:"column",height:"50%",alignItems:"center"}}>
+                    <div className="cards">
+                        <div className="services">
+                            {user.map((user,index) => {
+                                return <div className="content content-1">
+                                <div className="fab"></div>
+                                    <img src={user.imageURL} alt="car" style={{height: '150px', width: '200px'}}/>
+                                    <h2>{user.name}</h2>
+                                    <p>{user.model}</p>
+                                    <button onClick= {() => UserNav(`/User/${userID[index]}`)}>BOOK</button>    
+                                </div>
+                            })}
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div> 
+            </div> 
+        </div>
         </>
     )
 }
