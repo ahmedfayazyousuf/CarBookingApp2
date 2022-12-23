@@ -177,14 +177,14 @@ var count = 0
             </div>
 
             <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop:'5vh'}}>
-                <img src={Banner} alt="Logo" style={{width: '50vh'}}/>
+                <img src={Banner} alt="Logo" style={{width: '40vh'}}/>
             </div>
 
             <div style={{display: 'flex', flexDirection: 'column', textAlign: 'center', margin: '0', marginTop:'30px', marginBottom:'25px', padding: '0'}} >
                 <p>Please select a car to test drive</p>
             </div>  
 
-            <div style={{display: 'flex', flexDirection: 'row', textAlign: 'center', justifyContent: 'center', alignItems: 'center', margin: '0', padding:'0'}} >
+            <div className='rower' style={{display: 'flex', textAlign: 'center', justifyContent: 'center', alignItems: 'center', margin: '0', padding:'0'}} >
     
                 <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-end'}}>
                     <div id='Altima' className="content content-1" onClick={()=>{carClick('Altima')}} style={{padding: '0', margin: '10px'}}>
@@ -216,7 +216,7 @@ var count = 0
                 
             </div>
 
-            <div style={{display: 'flex', flexDirection: 'row', textAlign: 'center', justifyContent: 'center', alignItems: 'center', margin: '0', padding:'0'}} >
+            <div className='rower' style={{display: 'flex', textAlign: 'center', justifyContent: 'center', alignItems: 'center', margin: '0', padding:'0'}} >
     
                 <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-end', padding: '0', margin: '0'}}>
                     <div id='Xtrail' className="content content-1" onClick={()=>{carClick('Xtrail')}} style={{padding: '0', margin: '10px'}}>

@@ -3,9 +3,11 @@ body, html{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    overflow-y: hidden;
     overflow-x: hidden;
     height: 100vh;
+}
+html{
+    overflow-y: scroll;
 }
 
 @font-face{
@@ -57,6 +59,9 @@ h1, p, a{
         flex-direction: row;
     }
     .slotdiv{
+        flex-direction: column;
+    }
+    .rower{
         flex-direction: column;
     }
 }
