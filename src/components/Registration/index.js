@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import firebase from '../../firbase';
 import '../All.css';
@@ -63,6 +64,10 @@ const Registration = () =>{
         // });
         
     }
+
+    useEffect(()=>{
+        document.body.style.backgroundImage = `url(${process.env.PUBLIC_URL + '/desktop.jpg'})` 
+    },[])
     return(
         <>
             <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop:'5vh'}}>
