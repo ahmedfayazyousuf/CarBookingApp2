@@ -20,6 +20,7 @@ const TimeSlot = () => {
     const location = useLocation();
     const { id } = useParams();
     const navigate = useNavigate();
+    const [time, setTime] = useState('');
 
     console.log(location.state.uid)
     const getCars = async () =>{
@@ -96,7 +97,139 @@ const TimeSlot = () => {
 
             console.log()
 
+            if(e === 'timeslot9_10'){
+                document.getElementById(e).style.background = "rgb(200, 197, 197)";
+                document.getElementById('timeslot10_11').style.background = "transparent";
+                document.getElementById('timeslot11_12').style.background = "transparent";
+                document.getElementById('timeslot12_13').style.background = "transparent";
+                document.getElementById('timeslot13_14').style.background = "transparent";
+                document.getElementById('timeslot14_15').style.background = "transparent";
+                document.getElementById('timeslot15_16').style.background = "transparent";
+                document.getElementById('timeslot16_17').style.background = "transparent";
+                document.getElementById('timeslot17_18').style.background = "transparent";
+                setTime('timeslot9_10');
+    
+            }
 
+            if(e === 'timeslot10_11'){
+                document.getElementById(e).style.background = "rgb(200, 197, 197)";
+                document.getElementById('timeslot9_10').style.background = "transparent";
+                document.getElementById('timeslot11_12').style.background = "transparent";
+                document.getElementById('timeslot12_13').style.background = "transparent";
+                document.getElementById('timeslot13_14').style.background = "transparent";
+                document.getElementById('timeslot14_15').style.background = "transparent";
+                document.getElementById('timeslot15_16').style.background = "transparent";
+                document.getElementById('timeslot16_17').style.background = "transparent";
+                document.getElementById('timeslot17_18').style.background = "transparent";
+                setTime('timeslot10_11');
+    
+            }
+
+            if(e === 'timeslot11_12'){
+                document.getElementById(e).style.background = "rgb(200, 197, 197)";
+                document.getElementById('timeslot10_11').style.background = "transparent";
+                document.getElementById('timeslot9_10').style.background = "transparent";
+                document.getElementById('timeslot12_13').style.background = "transparent";
+                document.getElementById('timeslot13_14').style.background = "transparent";
+                document.getElementById('timeslot14_15').style.background = "transparent";
+                document.getElementById('timeslot15_16').style.background = "transparent";
+                document.getElementById('timeslot16_17').style.background = "transparent";
+                document.getElementById('timeslot17_18').style.background = "transparent";
+                setTime('timeslot11_12');
+    
+            }
+
+            if(e === 'timeslot12_13'){
+                document.getElementById(e).style.background = "rgb(200, 197, 197)";
+                document.getElementById('timeslot10_11').style.background = "transparent";
+                document.getElementById('timeslot11_12').style.background = "transparent";
+                document.getElementById('timeslot9_10').style.background = "transparent";
+                document.getElementById('timeslot13_14').style.background = "transparent";
+                document.getElementById('timeslot14_15').style.background = "transparent";
+                document.getElementById('timeslot15_16').style.background = "transparent";
+                document.getElementById('timeslot16_17').style.background = "transparent";
+                document.getElementById('timeslot17_18').style.background = "transparent";
+                setTime('timeslot12_13');
+    
+            }
+
+            if(e === 'timeslot13_14'){
+                document.getElementById(e).style.background = "rgb(200, 197, 197)";
+                document.getElementById('timeslot10_11').style.background = "transparent";
+                document.getElementById('timeslot11_12').style.background = "transparent";
+                document.getElementById('timeslot12_13').style.background = "transparent";
+                document.getElementById('timeslot9_10').style.background = "transparent";
+                document.getElementById('timeslot14_15').style.background = "transparent";
+                document.getElementById('timeslot15_16').style.background = "transparent";
+                document.getElementById('timeslot16_17').style.background = "transparent";
+                document.getElementById('timeslot17_18').style.background = "transparent";
+                setTime('timeslot13_14');
+    
+            }
+
+            if(e === 'timeslot14_15'){
+                document.getElementById(e).style.background = "rgb(200, 197, 197)";
+                document.getElementById('timeslot10_11').style.background = "transparent";
+                document.getElementById('timeslot11_12').style.background = "transparent";
+                document.getElementById('timeslot12_13').style.background = "transparent";
+                document.getElementById('timeslot13_14').style.background = "transparent";
+                document.getElementById('timeslot9_10').style.background = "transparent";
+                document.getElementById('timeslot15_16').style.background = "transparent";
+                document.getElementById('timeslot16_17').style.background = "transparent";
+                document.getElementById('timeslot17_18').style.background = "transparent";
+                setTime('timeslot14_15');
+    
+            }
+
+            if(e === 'timeslot15_16'){
+                document.getElementById(e).style.background = "rgb(200, 197, 197)";
+                document.getElementById('timeslot10_11').style.background = "transparent";
+                document.getElementById('timeslot11_12').style.background = "transparent";
+                document.getElementById('timeslot12_13').style.background = "transparent";
+                document.getElementById('timeslot13_14').style.background = "transparent";
+                document.getElementById('timeslot14_15').style.background = "transparent";
+                document.getElementById('timeslot9_10').style.background = "transparent";
+                document.getElementById('timeslot16_17').style.background = "transparent";
+                document.getElementById('timeslot17_18').style.background = "transparent";
+                setTime('timeslot15_16');
+    
+            }
+
+            if(e === 'timeslot16_17'){
+                document.getElementById(e).style.background = "rgb(200, 197, 197)";
+                document.getElementById('timeslot10_11').style.background = "transparent";
+                document.getElementById('timeslot11_12').style.background = "transparent";
+                document.getElementById('timeslot12_13').style.background = "transparent";
+                document.getElementById('timeslot13_14').style.background = "transparent";
+                document.getElementById('timeslot14_15').style.background = "transparent";
+                document.getElementById('timeslot15_16').style.background = "transparent";
+                document.getElementById('timeslot9_10').style.background = "transparent";
+                document.getElementById('timeslot17_18').style.background = "transparent";
+                setTime('timeslot16_17');
+    
+            }
+
+            if(e === 'timeslot17_18'){
+                document.getElementById(e).style.background = "rgb(200, 197, 197)";
+                document.getElementById('timeslot10_11').style.background = "transparent";
+                document.getElementById('timeslot11_12').style.background = "transparent";
+                document.getElementById('timeslot12_13').style.background = "transparent";
+                document.getElementById('timeslot13_14').style.background = "transparent";
+                document.getElementById('timeslot14_15').style.background = "transparent";
+                document.getElementById('timeslot15_16').style.background = "transparent";
+                document.getElementById('timeslot16_17').style.background = "transparent";
+                document.getElementById('timeslot9_10').style.background = "transparent";
+                setTime('timeslot17_18');
+    
+            }
+
+
+            
+            
+            
+        }
+
+        function Handlesubmit(e){
             const Location = firebase.firestore().collection("Cars").doc(`${location.state.car}`);
             const User = firebase.firestore().collection("Users").doc(`${location.state.uid}`);
 
@@ -122,9 +255,9 @@ const TimeSlot = () => {
                                 var email = data.Email
                                 console.log(timeslot)
                                 console.log(email);
-                                axios.post("http://localhost:4000/send_confirmation", {
-                                    name, dinner, timeslot, car, model, email
-                               })
+                            //     axios.post("http://localhost:4000/send_confirmation", {
+                            //         name, dinner, timeslot, car, model, email
+                            //    })
                            } catch (error) {
                                console.log(error);
                            }
@@ -136,7 +269,7 @@ const TimeSlot = () => {
                         console.log("oops it got booked")
                     }
                 }).then(()=>{
-                    // navigate("/success",{state:{uid:location.state.uid,count:location.state.count}});
+                    navigate("/success",{state:{uid:location.state.uid,count:location.state.count}});
                 })
             }
 
@@ -162,9 +295,9 @@ const TimeSlot = () => {
                                 var email = data.Email
                                 console.log(timeslot)
 
-                                axios.post("http://localhost:4000/send_confirmation", {
-                                    name, dinner, timeslot, car, model, email
-                               })
+                            //     axios.post("http://localhost:4000/send_confirmation", {
+                            //         name, dinner, timeslot, car, model, email
+                            //    })
                            } catch (error) {
                                console.log(error);
                            }
@@ -174,11 +307,9 @@ const TimeSlot = () => {
                         console.log("oops it got booked")
                     }
                 }).then(()=>{
-                    // navigate("/success",{state:{uid:location.state.uid,count:location.state.count}});
+                    navigate("/success",{state:{uid:location.state.uid,count:location.state.count}});
                 })
             }
-            
-            
         }
     
     return(
@@ -213,7 +344,7 @@ const TimeSlot = () => {
                     <button className="grab" id="timeslot17_18" onClick={() => {Handleclick("timeslot17_18")}} value="5:PM - 6 PM" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>5:00 PM</button>
                 </div>
 
-                <button className="grab" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'white', backgroundColor: 'black'}}>Next</button>
+                <button className="grab" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'white', backgroundColor: 'black'}} onClick={() => {Handlesubmit(time)}} >Next</button>
 
 
             </div>
