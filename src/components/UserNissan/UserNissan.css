@@ -27,12 +27,16 @@
   display: flex;
   flex-wrap: wrap;
   flex: 1;
-  max-width: 300px;
+  min-width: 300px;
+  min-width: 300px;
+  max-height: 200px;
+  min-height: 200px;
   margin: 20px;
-  padding: 20px;
   border: 2px solid black;
   border-radius: 10px;
   transition: all .3s ease;
+  cursor: -webkit-grab; 
+  cursor: grab;
 }
 .content .fab{
   font-size: 70px;
@@ -49,11 +53,11 @@
   background: white;
 }
 .content-1:hover{
-  border-color: #D1242A;
-  background: #D1242A;
+  border-color: rgb(187, 183, 183);
+  background: rgb(187, 183, 183);
 }
 .content-1:hover a{
-  color: #D1242A;
+  color: rgb(187, 183, 183);
 }
 .content h2{
   font-size: 30px;
