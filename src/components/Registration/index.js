@@ -69,7 +69,7 @@ const Registration = () =>{
                         console.log("added")
                     }
                     else{
-                        navigate("/UserChooseCompany",{state:{uid:doc.id,count:1}});
+                        navigate("/UserChooseCompany",{state:{uid:doc.id,count:doc.data().Count}});
                     }
                 });
             }
