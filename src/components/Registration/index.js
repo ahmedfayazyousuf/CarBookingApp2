@@ -103,7 +103,7 @@ const Registration = () =>{
             </div>
 
             <div style={{display: 'flex', flexDirection: 'column', textAlign: 'center', margin: '0', padding: '0'}} >
-                <h1 style={{fontSize: '45px', marginTop: '20px', marginBottom: '-8px'}} >GET READY TO</h1>
+                <h1 style={{fontSize: '43px', marginTop: '20px', marginBottom: '-8px'}} >GET READY TO</h1>
                 <h1 className='explore' style={{fontSize: '66px', margin: '-24px'}}>EXPLORE</h1>
                 <h1 style={{fontSize: '34px', marginBottom: '10px'}}>MORE. TOGETHER.</h1>
             </div>
