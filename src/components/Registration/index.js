@@ -3,31 +3,58 @@ import { useNavigate } from 'react-router-dom';
 import firebase from '../../firbase';
 import '../All.css';
 import NissanLogo from '../nissanlogo.png';
+import { useParams } from "react-router-dom";
 
 const Registration = () =>{
     const navigate = useNavigate();
+    const { id } = useParams();
+
 
     function HandleSubmit(){
+        
         const Users = firebase.firestore().collection("Users");
         const Email = document.getElementById("email").value;
         const Number = document.getElementById("no").value;
         const Name = document.getElementById("Name").value;
         console.log(Email)
+
+       
         Users.where("Email", "==", Email).get().then((doc)=>{
             if(doc.empty){
-                Users.add({
-                    Name:Name,
-                    Email:Email,
-                    Number:Number,
-                    Count:0
-        
-                }).then(function(docRef) {
-                    console.log("Document written with ID: ", docRef.id);
-                    navigate("/UserChooseCompany",{state:{uid:docRef.id,count:0}});
-                })
-                .catch(function(error) {
-                    console.error("Error adding document: ", error);
-                });
+
+                if(id === undefined){
+                    Users.add({
+                        Name:Name,
+                        Email:Email,
+                        Number:Number,
+                        Count:0,
+                        Dinner:"no",
+                        time: firebase.firestore.FieldValue.serverTimestamp()
+            
+                    }).then(function(docRef) {
+                        console.log("Document written with ID: ", docRef.id);
+                        navigate("/UserChooseCompany",{state:{uid:docRef.id,count:0}});
+                    })
+                    .catch(function(error) {
+                        console.error("Error adding document: ", error);
+                    });  
+                }else{
+                    Users.add({
+                        Name:Name,
+                        Email:Email,
+                        Number:Number,
+                        Count:0,
+                        Dinner:"yes",
+                        time: firebase.firestore.FieldValue.serverTimestamp()
+            
+                    }).then(function(docRef) {
+                        console.log("Document written with ID: ", docRef.id);
+                        navigate("/UserChooseCompany",{state:{uid:docRef.id,count:0}});
+                    })
+                    .catch(function(error) {
+                        console.error("Error adding document: ", error);
+                    });
+                }
 
             }else{
                 doc.forEach((doc) => {

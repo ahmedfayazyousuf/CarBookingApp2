@@ -20,6 +20,8 @@ const App = () => {
     <>
       <Routes>
           <Route exact path="/" element={<Registration/>} />
+          <Route path="/:id" element={<Registration/>} />
+
           <Route path="/AdminNissan" element={<AdminNissan/>} />
           <Route path="/AdminInfiniti" element={<AdminInfiniti />} />
           <Route path="/AdminChooseCompany" element={<AdminChooseCompany/>} />
