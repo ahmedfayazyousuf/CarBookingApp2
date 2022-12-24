@@ -124,7 +124,7 @@ var count = 0
             document.getElementById('QX55').style.background = "transparent";
             document.getElementById('Q60').style.background = "transparent";
             document.getElementById('QX50').style.background = "transparent";
-            setCar('/Q60PT2');
+            setCar('/Q50');
         }
 
         if(e === 'QX50'){
@@ -201,7 +201,7 @@ var count = 0
                 <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', padding: '0', margin: '0'}}>
                     <div id='Q50' className="content content-1" onClick={()=>{carClick('Q50')}} style={{padding: '0', margin: '10px'}}>
                         <img src={Q50} alt="Logo" style={{width: '20vh'}}/>  
-                        <p style={{fontSize: '10px'}}>Q60</p>
+                        <p style={{fontSize: '10px'}}>Q50</p>
                     </div>
                 </div>
 
