@@ -2,10 +2,11 @@
 import '../All.css';
 import NissanLogo from '../nissanlogo.png';
 import firebase from '../../firbase';
-
+import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 const DinnerRegistration = () =>{
-
-    function Handlesubmit (){
+    const navigate = useNavigate();
+    async function Handlesubmit (){
 
         const Users = firebase.firestore().collection("Users");
         const Email = document.getElementById("email").value;
@@ -21,6 +22,10 @@ const DinnerRegistration = () =>{
 
         }).then(function(docRef) {
             console.log("Document written with ID: ", docRef.id);
+            axios.post("https://imagersvpserver.azurewebsites.net/send_dinner",
+            {email:Email})
+        }).then(()=>{
+            navigate("/success",{state:{uid:2,count:100}});
         })
         .catch(function(error) {
             console.error("Error adding document: ", error);

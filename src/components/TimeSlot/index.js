@@ -21,7 +21,12 @@ const TimeSlot = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const [time, setTime] = useState('');
-
+    const [name, setName] = useState('');
+    const [dinner, setDinner] = useState('');
+    const [timeslot, setTimeslot] = useState('');
+    const [car, setCar] = useState('');
+    const [model, setModel] = useState('');
+    const [email, setEmail] = useState('');
     console.log(location.state.uid)
     const getCars = async () =>{
         
@@ -229,22 +234,22 @@ const TimeSlot = () => {
             
         }
 
-        function Handlesubmit(e){
+        async function Handlesubmit(e){
             const Location = firebase.firestore().collection("Cars").doc(`${location.state.car}`);
             const User = firebase.firestore().collection("Users").doc(`${location.state.uid}`);
 
             if(location.state.count === 0){
-                Location.collection('models').doc(`${id}`).collection('timeslot').doc(e).get().then((doc2)=>{
+                Location.collection('models').doc(`${id}`).collection('timeslot').doc(e).get().then(async (doc2)=>{
                     if(doc2.data().available !== 0){
                         Location.collection('models').doc(`${id}`).collection('timeslot').doc(e).update({available : firebase.firestore.FieldValue.increment(-1)})
-                        User.update({
+                        await User.update({
                             Timeslot: e,
                             Car: `${location.state.car}`,
                             Model: `${id}`,
                             Count: firebase.firestore.FieldValue.increment(1)
                         });
 
-                        User.get().then((doc) =>{
+                        await User.get().then((doc) =>{
                             try {
                                 var data = doc.data()
                                 var name = data.Name
@@ -253,38 +258,59 @@ const TimeSlot = () => {
                                 var car = location.state.car
                                 var model = id
                                 var email = data.Email
+
+                                setName(name);
+                                setDinner(dinner)
+                                setTimeslot(timeslot)
+                                setCar(car)
+                                setModel(model)
+                                setEmail(email)
                                 console.log(timeslot)
                                 console.log(email);
-                            //     axios.post("http://localhost:4000/send_confirmation", {
-                            //         name, dinner, timeslot, car, model, email
-                            //    })
+                                if(dinner === 'no'){
+                                    axios.post("https://imagersvpserver.azurewebsites.net/send_book", {
+                                    name, dinner, timeslot, car, model, email
+                                  })
+                                   }else{
+                                    console.log(email)
+                                       axios.post("https://imagersvpserver.azurewebsites.net/send_dinnerbook", {
+                                           name, dinner, timeslot, car, model, email
+                                         })
+                                   }
+                                
                            } catch (error) {
                                console.log(error);
                            }
                             
-                        })
+                        }).then(()=>{
+         
+                        }
+                        
+                        )
 
                         
                     }else{
                         console.log("oops it got booked")
                     }
                 }).then(()=>{
-                    navigate("/success",{state:{uid:location.state.uid,count:location.state.count}});
+                   navigate("/success",{state:{uid:location.state.uid,count:location.state.count,dinner:dinner,car:car,model:model,email:email,timeslot:timeslot,name:name}});
                 })
+                // navigate("/success",{state:{uid:location.state.uid,count:location.state.count,dinner:dinner,car:car,model:model,email:email,timeslot:timeslot,name:name}});
             }
+            
 
             else{
-                Location.collection('models').doc(`${id}`).collection('timeslot').doc(e).get().then((doc2)=>{
+                Location.collection('models').doc(`${id}`).collection('timeslot').doc(e).get().then(async (doc2)=>{
                     if(doc2.data().available !== 0){
                         Location.collection('models').doc(`${id}`).collection('timeslot').doc(e).update({available : firebase.firestore.FieldValue.increment(-1)})
-                        User.update({
+                        await User.update({
                             Timeslot2: e,
                             Car2: `${location.state.car}`,
                             Model2: `${id}`,
                             Count: firebase.firestore.FieldValue.increment(1)
                         });
 
-                        User.get().then((doc) =>{
+                        await User.get().then((doc) =>{
                             try {
                                 var data = doc.data()
                                 var name = data.Name
@@ -293,22 +319,41 @@ const TimeSlot = () => {
                                 var car = location.state.car
                                 var model = id
                                 var email = data.Email
+                                setName(name);
+                                setDinner(dinner)
+                                setTimeslot(timeslot)
+                                setCar(car)
+                                setModel(model)
+                                setEmail(email)
                                 console.log(timeslot)
 
-                            //     axios.post("http://localhost:4000/send_confirmation", {
-                            //         name, dinner, timeslot, car, model, email
-                            //    })
+                                if(dinner === 'no'){
+                                    console.log(email)
+                                 axios.post("https://imagersvpserver.azurewebsites.net/send_book", {
+                                 name, dinner, timeslot, car, model, email
+                               })
+                                }else{
+                                    console.log(email)
+                                    axios.post("https://imagersvpserver.azurewebsites.net/send_dinnerbook", {
+                                        name, dinner, timeslot, car, model, email
+                                      })
+                                }
+
+                           
                            } catch (error) {
                                console.log(error);
                            }
                             
+                        }).then(()=>{
+                      
                         });
                     }else{
                         console.log("oops it got booked")
                     }
                 }).then(()=>{
-                    navigate("/success",{state:{uid:location.state.uid,count:location.state.count}});
+                    navigate("/success",{state:{uid:location.state.uid,count:location.state.count,dinner:dinner,car:car,model:model,email:email,timeslot:timeslot,name:name}});
                 })
+                // navigate("/success",{state:{uid:location.state.uid,count:location.state.count,dinner:dinner,car:car,model:model,email:email,timeslot:timeslot,name:name}});
             }
         }
     

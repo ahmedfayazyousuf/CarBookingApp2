@@ -11,6 +11,9 @@ const Success = () =>{
         if(location.state.count >= 1){
             document.getElementById('return').style.display = "none";
         }
+
+
+
     })
 
     function HandleSubmit(){
