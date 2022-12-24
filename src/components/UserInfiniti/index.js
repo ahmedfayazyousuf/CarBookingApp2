@@ -26,6 +26,7 @@ const UserInfiniti= () => {
     const storage = getStorage();
     // eslint-disable-next-line
     var storagePath = 'uploads/' + file.name ;
+    const [car, setCar] = useState('');
     const location = useLocation();
 var count = 0
     useEffect(() => {
@@ -83,6 +84,7 @@ var count = 0
             document.getElementById('Q60').style.background = "transparent";
             document.getElementById('Q60_2').style.background = "transparent";
             document.getElementById('QX50').style.background = "transparent";
+            setCar('/QX80');
         }
 
         if(e === 'QX60'){
@@ -92,6 +94,7 @@ var count = 0
             document.getElementById('Q60').style.background = "transparent";
             document.getElementById('Q60_2').style.background = "transparent";
             document.getElementById('QX50').style.background = "transparent";
+            setCar('/QX60');
         }
 
         if(e === 'QX55'){
@@ -101,6 +104,7 @@ var count = 0
             document.getElementById('Q60').style.background = "transparent";
             document.getElementById('Q60_2').style.background = "transparent";
             document.getElementById('QX50').style.background = "transparent";
+            setCar('/QX55');
         }
 
         if(e === 'Q60'){
@@ -110,6 +114,7 @@ var count = 0
             document.getElementById('QX55').style.background = "transparent";
             document.getElementById('Q60_2').style.background = "transparent";
             document.getElementById('QX50').style.background = "transparent";
+            setCar('/Q60');
         }
 
         if(e === 'Q60_2'){
@@ -119,6 +124,7 @@ var count = 0
             document.getElementById('QX55').style.background = "transparent";
             document.getElementById('Q60').style.background = "transparent";
             document.getElementById('QX50').style.background = "transparent";
+            setCar('/Q60PT2');
         }
 
         if(e === 'QX50'){
@@ -128,9 +134,18 @@ var count = 0
             document.getElementById('QX55').style.background = "transparent";
             document.getElementById('Q60').style.background = "transparent";
             document.getElementById('Q60_2').style.background = "transparent";
+            setCar('/QX50');
         }
 
 
+    }
+
+    function Handleclick(v){
+        if(car === ''){
+            return;
+        }
+        
+    navigate('/User'+v, {state:{uid:location.state.uid,car:"Infinity",count:location.state.count}});
     }
 
     
@@ -200,7 +215,7 @@ var count = 0
             </div>
 
             <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop:'10px'}}>
-                <button className="grab" id='return' style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'white', backgroundColor: 'black'}}>Next</button>
+                <button className="grab" id='return' style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'white', backgroundColor: 'black'}}  onClick= {() => Handleclick(car)}>Next</button>
             </div>
 
         </div>

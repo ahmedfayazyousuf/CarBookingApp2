@@ -1,7 +1,36 @@
+
 import '../All.css';
 import NissanLogo from '../nissanlogo.png';
-
+import firebase from '../../firbase';
+import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 const DinnerRegistration = () =>{
+    const navigate = useNavigate();
+    async function Handlesubmit (){
+
+        const Users = firebase.firestore().collection("Users");
+        const Email = document.getElementById("email").value;
+        const Number = document.getElementById("no").value;
+        const Name = document.getElementById("Name").value;
+
+        Users.add({
+            Name:Name,
+            Email:Email,
+            Number:Number,
+            Dinner:"yes",
+            time: firebase.firestore.FieldValue.serverTimestamp()
+
+        }).then(function(docRef) {
+            console.log("Document written with ID: ", docRef.id);
+            axios.post("https://imagersvpserver.azurewebsites.net/send_dinner",
+            {email:Email})
+        }).then(()=>{
+            navigate("/success",{state:{uid:2,count:100}});
+        })
+        .catch(function(error) {
+            console.error("Error adding document: ", error);
+        });
+    }
         
     return(
         <div style={{height: '100vh', width: '100vw', backgroundImage: `url("desktop.jpg")`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed', backgroundSize: 'cover', margin: '0', padding: '0'}}>
@@ -42,7 +71,7 @@ const DinnerRegistration = () =>{
                         </div>
                     </div>
 
-                    <button className="grab" style={{width:"150px", marginTop: '30px', margin: '10px', borderRadius: '10px', padding: '10px', color: 'white', backgroundColor: 'black'}}>Login</button>
+                    <button className="grab" style={{width:"150px", marginTop: '30px', margin: '10px', borderRadius: '10px', padding: '10px', color: 'white', backgroundColor: 'black'}} onClick={Handlesubmit}>Login</button>
                 </div>
                 
             </div>

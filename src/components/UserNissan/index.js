@@ -16,6 +16,7 @@ import firebase from '../../firbase'
 import { getStorage } from "firebase/storage";
 import { useNavigate } from 'react-router-dom';
 import {useLocation} from 'react-router-dom';
+
 const UserNissan= () => {
     const [car, setCar] = useState('');
     const [user, setUser] = useState([])
@@ -28,6 +29,7 @@ const UserNissan= () => {
     // eslint-disable-next-line
     var storagePath = 'uploads/' + file.name ;
     const location = useLocation();
+
 var count = 0
     useEffect(() => {
         if(count === 0){
@@ -87,6 +89,8 @@ var count = 0
             document.getElementById('Nismo_370z').style.background = "transparent";
             document.getElementById('Maxima').style.background = "transparent";
             document.getElementById('Kicks').style.background = "transparent";
+            setCar('/Altima');
+
         }
 
         if (e === 'Patrol'){
@@ -98,6 +102,7 @@ var count = 0
             document.getElementById('Nismo_370z').style.background = "transparent";
             document.getElementById('Maxima').style.background = "transparent";
             document.getElementById('Kicks').style.background = "transparent";
+            setCar('/Patrol');
         }
 
         if (e === 'Pathfinder'){
@@ -109,6 +114,7 @@ var count = 0
             document.getElementById('Nismo_370z').style.background = "transparent";
             document.getElementById('Maxima').style.background = "transparent";
             document.getElementById('Kicks').style.background = "transparent";
+            setCar('/Pathfinder');
         }
 
         if (e === 'NissanZ'){
@@ -120,6 +126,7 @@ var count = 0
             document.getElementById('Nismo_370z').style.background = "transparent";
             document.getElementById('Maxima').style.background = "transparent";
             document.getElementById('Kicks').style.background = "transparent";
+            setCar('/Z');
         }
 
         if (e === 'Xtrail'){
@@ -131,6 +138,7 @@ var count = 0
             document.getElementById('Nismo_370z').style.background = "transparent";
             document.getElementById('Maxima').style.background = "transparent";
             document.getElementById('Kicks').style.background = "transparent";
+            setCar('/Xtrail');
         }
 
         if (e === 'Nismo_370z'){
@@ -142,6 +150,7 @@ var count = 0
             document.getElementById('Xtrail').style.background = "transparent";
             document.getElementById('Maxima').style.background = "transparent";
             document.getElementById('Kicks').style.background = "transparent";
+            setCar('/Nismo370z');
         }
 
         if (e === 'Maxima'){
@@ -153,6 +162,7 @@ var count = 0
             document.getElementById('Xtrail').style.background = "transparent";
             document.getElementById('Nismo_370z').style.background = "transparent";
             document.getElementById('Kicks').style.background = "transparent";
+            setCar('/Maxima');
         }
 
         if (e === 'Kicks'){
@@ -164,8 +174,17 @@ var count = 0
             document.getElementById('Xtrail').style.background = "transparent";
             document.getElementById('Nismo_370z').style.background = "transparent";
             document.getElementById('Maxima').style.background = "transparent";
+            setCar('/Kicks');
         }
         
+    }
+
+    function Handleclick(v){
+        if(car === ''){
+            return;
+        }
+        
+    navigate('/User'+v, {state:{uid:location.state.uid,car:"Nissan",count:location.state.count}});
     }
     
     return(
@@ -248,7 +267,7 @@ var count = 0
             </div>
 
             <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop:'10px'}}>
-                <button className="grab" id='return' style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'white', backgroundColor: 'black'}}>Next</button>
+                <button className="grab" id='return' style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'white', backgroundColor: 'black'}} onClick= {() => Handleclick(car)}>Next</button>
             </div>
 
         </div>
