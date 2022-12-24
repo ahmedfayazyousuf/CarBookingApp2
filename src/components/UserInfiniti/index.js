@@ -8,8 +8,8 @@ import {useLocation} from 'react-router-dom';
 import NissanLogo from '../nissanlogo.png';
 import Banner from './Banner.png';
 
-import Q60_2 from './InfinitiCars/Q50 2.png';
-// import Car_Not_In_UI from './InfinitiCars/Q50.png';
+import Q50 from './InfinitiCars/Q50.png';
+// import Q50 from './InfinitiCars/Q50.png';
 import Q60 from './InfinitiCars/Q60.png';
 import QX50 from './InfinitiCars/QX50.png';
 import QX55 from './InfinitiCars/QX55.png';
@@ -82,7 +82,7 @@ var count = 0
             document.getElementById('QX60').style.background = "transparent";
             document.getElementById('QX55').style.background = "transparent";
             document.getElementById('Q60').style.background = "transparent";
-            document.getElementById('Q60_2').style.background = "transparent";
+            document.getElementById('Q50').style.background = "transparent";
             document.getElementById('QX50').style.background = "transparent";
             setCar('/QX80');
         }
@@ -92,7 +92,7 @@ var count = 0
             document.getElementById('QX80').style.background = "transparent";
             document.getElementById('QX55').style.background = "transparent";
             document.getElementById('Q60').style.background = "transparent";
-            document.getElementById('Q60_2').style.background = "transparent";
+            document.getElementById('Q50').style.background = "transparent";
             document.getElementById('QX50').style.background = "transparent";
             setCar('/QX60');
         }
@@ -102,7 +102,7 @@ var count = 0
             document.getElementById('QX80').style.background = "transparent";
             document.getElementById('QX60').style.background = "transparent";
             document.getElementById('Q60').style.background = "transparent";
-            document.getElementById('Q60_2').style.background = "transparent";
+            document.getElementById('Q50').style.background = "transparent";
             document.getElementById('QX50').style.background = "transparent";
             setCar('/QX55');
         }
@@ -112,12 +112,12 @@ var count = 0
             document.getElementById('QX80').style.background = "transparent";
             document.getElementById('QX60').style.background = "transparent";
             document.getElementById('QX55').style.background = "transparent";
-            document.getElementById('Q60_2').style.background = "transparent";
+            document.getElementById('Q50').style.background = "transparent";
             document.getElementById('QX50').style.background = "transparent";
             setCar('/Q60');
         }
 
-        if(e === 'Q60_2'){
+        if(e === 'Q50'){
             document.getElementById(e).style.background = "rgb(200, 197, 197)";
             document.getElementById('QX80').style.background = "transparent";
             document.getElementById('QX60').style.background = "transparent";
@@ -133,7 +133,7 @@ var count = 0
             document.getElementById('QX60').style.background = "transparent";
             document.getElementById('QX55').style.background = "transparent";
             document.getElementById('Q60').style.background = "transparent";
-            document.getElementById('Q60_2').style.background = "transparent";
+            document.getElementById('Q50').style.background = "transparent";
             setCar('/QX50');
         }
 
@@ -199,8 +199,8 @@ var count = 0
                 </div>
 
                 <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', padding: '0', margin: '0'}}>
-                    <div id='Q60_2' className="content content-1" onClick={()=>{carClick('Q60_2')}} style={{padding: '0', margin: '10px'}}>
-                        <img src={Q60_2} alt="Logo" style={{width: '20vh'}}/>  
+                    <div id='Q50' className="content content-1" onClick={()=>{carClick('Q50')}} style={{padding: '0', margin: '10px'}}>
+                        <img src={Q50} alt="Logo" style={{width: '20vh'}}/>  
                         <p style={{fontSize: '10px'}}>Q60</p>
                     </div>
                 </div>
