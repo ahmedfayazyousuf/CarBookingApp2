@@ -87,7 +87,6 @@ var count = 0
             document.getElementById('Nismo_370z').style.background = "transparent";
             document.getElementById('Maxima').style.background = "transparent";
             document.getElementById('Kicks').style.background = "transparent";
-
         }
 
         if (e === 'Patrol'){
