@@ -84,7 +84,7 @@ var count = 0
             document.getElementById('Q60').style.background = "transparent";
             document.getElementById('Q60_2').style.background = "transparent";
             document.getElementById('QX50').style.background = "transparent";
-            setCar('/Qx80');
+            setCar('/QX80');
         }
 
         if(e === 'QX60'){
@@ -94,7 +94,7 @@ var count = 0
             document.getElementById('Q60').style.background = "transparent";
             document.getElementById('Q60_2').style.background = "transparent";
             document.getElementById('QX50').style.background = "transparent";
-            setCar('/Qx60');
+            setCar('/QX60');
         }
 
         if(e === 'QX55'){
@@ -145,7 +145,7 @@ var count = 0
             return;
         }
         
-    navigate('/User'+v, {state:{uid:location.state.uid,car:"Nissan",count:location.state.count}});
+    navigate('/User'+v, {state:{uid:location.state.uid,car:"Infinity",count:location.state.count}});
     }
 
     

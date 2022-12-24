@@ -239,6 +239,7 @@ const TimeSlot = () => {
             const User = firebase.firestore().collection("Users").doc(`${location.state.uid}`);
 
             if(location.state.count === 0){
+                console.log(location.state.car)
                 Location.collection('models').doc(`${id}`).collection('timeslot').doc(e).get().then(async (doc2)=>{
                     if(doc2.data().available !== 0){
                         Location.collection('models').doc(`${id}`).collection('timeslot').doc(e).update({available : firebase.firestore.FieldValue.increment(-1)})
@@ -300,6 +301,7 @@ const TimeSlot = () => {
             
 
             else{
+                console.log(location.state.car)
                 Location.collection('models').doc(`${id}`).collection('timeslot').doc(e).get().then(async (doc2)=>{
                     if(doc2.data().available !== 0){
                         Location.collection('models').doc(`${id}`).collection('timeslot').doc(e).update({available : firebase.firestore.FieldValue.increment(-1)})
