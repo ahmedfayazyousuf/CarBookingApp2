@@ -61,27 +61,26 @@ const UserChooseCompany = () => {
 
 
 
-            <div style={{display: 'flex', flexDirection: 'row', textAlign: 'center', justifyContent: 'center', alignItems: 'center', margin: '0', padding:'0', gap:"50px"}} >
-                <div style={{width: '50%'}}>
-                    <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-end'}}>
-                        <div id='nissan' className="content content-1" onClick={()=>{carClick('nissan')}}>
-                            <img src={ChooseNissan} alt="Logo" style={{width: '20vh'}}/>
-                            {/* <Button color="success" variant="contained" onClick= {() => Handleclick('/UserNissan')}>Nissan</Button>    */}
-                        </div>
+        
+
+            <div className="rower" style={{display: 'flex', textAlign: 'center', justifyContent: 'center', alignItems: 'center', margin: '0', padding:'0', gap:'30px', marginTop:'10px'}} >
+    
+                <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-end', padding: '0', margin: '0'}}>
+                    <div id='nissan' className="content content-1" onClick={()=>{carClick('nissan')}} style={{padding: '0', margin: '10px'}}>
+                        <img src={ChooseNissan} alt="Logo" style={{width: '20vh'}}/>
                     </div>
                 </div>
 
-                <div style={{width: '50%'}}>
-                    <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start'}}>
-                        <div id='infiniti' className="content content-1" onClick={()=>{carClick('infiniti')}}>
-                            <img src={ChooseInfiniti} alt="Logo" style={{width: '20vh'}}/>  
-                            {/* <Button color="success" variant="contained" onClick= {() => Handleclick('/UserInfiniti')}>Infinity</Button> */}
-                            </div>
-                        </div>
+                <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', padding: '0', margin: '0'}}>
+                    <div id='infiniti' className="content content-1" onClick={()=>{carClick('infiniti')}} style={{padding: '0', margin: '10px'}}>
+                        <img src={ChooseInfiniti} alt="Logo" style={{width: '20vh'}}/>  
+                    </div>
                 </div>
+
+                
             </div>
 
-            <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop:'5vh'}} >
+            <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop:'3vh'}} >
                 <button className="grab" style={{color:"white", background:"black",width:"150px",borderRadius: '5px', padding: '10px'}} variant="contained" onClick= {() => Handleclick(car)}>Next</button> 
             </div>
 

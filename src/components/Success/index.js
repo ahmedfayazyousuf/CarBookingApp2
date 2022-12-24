@@ -21,9 +21,10 @@ const Success = () =>{
     }
 
     return(
-        <>
-            <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop:'5vh'}}>
-                <img src={NissanLogo} alt="Logo" style={{width: '20vh'}}/>
+        <div style={{height: '100vh', width: '100vw', backgroundImage: `url("desktop.jpg")`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed', backgroundSize: 'cover', margin: '0', padding: '0'}}>
+        
+            <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+                <img src={NissanLogo} alt="Logo" style={{width: '20vh', marginTop: '30px',}}/>
             </div>
 
             <div style={{display: 'flex', flexDirection: 'column', textAlign: 'center', margin: '0', padding: '0'}} >
@@ -43,7 +44,7 @@ const Success = () =>{
             <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop:'5vh'}}>
                 <button className="grab" id='return' style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'white', backgroundColor: 'black'}} onClick={HandleSubmit}>Book Another Slot</button>
             </div>
-        </>
+        </div>
     )
 }
 
