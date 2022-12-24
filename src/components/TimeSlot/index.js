@@ -377,7 +377,7 @@ const TimeSlot = () => {
 
             <div className="slotparent" style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems:'center', width: '100%', marginTop: '15px'}}>
                 <div className="slotdiv" style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems:'center', width: '70%'}}>
-                    <button className="grab" id="timeslot9_10" onClick={() => {Handleclick("timeslot9_10")}} value="9:AM - 10 AM" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>9:00 AM</button>
+                    {/* <button className="grab" id="timeslot9_10" onClick={() => {Handleclick("timeslot9_10")}} value="9:AM - 10 AM" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>9:00 AM</button> */}
                     <button className="grab" id="timeslot10_11" onClick={() => {Handleclick("timeslot10_11")}} value="10:AM - 11 AM" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>10:00 AM</button>
                     <button className="grab" id="timeslot11_12" onClick={() => {Handleclick("timeslot11_12")}} value="11:AM - 12 PM" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>11:00 AM</button>
                     <button className="grab" id="timeslot12_13" onClick={() => {Handleclick("timeslot12_13")}} value="12:PM - 1 PM" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>12:00 PM</button>
