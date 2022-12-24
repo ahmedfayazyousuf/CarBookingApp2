@@ -102,23 +102,9 @@ const TimeSlot = () => {
 
             console.log()
 
-            if(e === 'timeslot9_10'){
-                document.getElementById(e).style.background = "rgb(200, 197, 197)";
-                document.getElementById('timeslot10_11').style.background = "transparent";
-                document.getElementById('timeslot11_12').style.background = "transparent";
-                document.getElementById('timeslot12_13').style.background = "transparent";
-                document.getElementById('timeslot13_14').style.background = "transparent";
-                document.getElementById('timeslot14_15').style.background = "transparent";
-                document.getElementById('timeslot15_16').style.background = "transparent";
-                document.getElementById('timeslot16_17').style.background = "transparent";
-                document.getElementById('timeslot17_18').style.background = "transparent";
-                setTime('timeslot9_10');
-    
-            }
-
             if(e === 'timeslot10_11'){
                 document.getElementById(e).style.background = "rgb(200, 197, 197)";
-                document.getElementById('timeslot9_10').style.background = "transparent";
+      
                 document.getElementById('timeslot11_12').style.background = "transparent";
                 document.getElementById('timeslot12_13').style.background = "transparent";
                 document.getElementById('timeslot13_14').style.background = "transparent";
@@ -133,7 +119,7 @@ const TimeSlot = () => {
             if(e === 'timeslot11_12'){
                 document.getElementById(e).style.background = "rgb(200, 197, 197)";
                 document.getElementById('timeslot10_11').style.background = "transparent";
-                document.getElementById('timeslot9_10').style.background = "transparent";
+      
                 document.getElementById('timeslot12_13').style.background = "transparent";
                 document.getElementById('timeslot13_14').style.background = "transparent";
                 document.getElementById('timeslot14_15').style.background = "transparent";
@@ -148,7 +134,7 @@ const TimeSlot = () => {
                 document.getElementById(e).style.background = "rgb(200, 197, 197)";
                 document.getElementById('timeslot10_11').style.background = "transparent";
                 document.getElementById('timeslot11_12').style.background = "transparent";
-                document.getElementById('timeslot9_10').style.background = "transparent";
+      
                 document.getElementById('timeslot13_14').style.background = "transparent";
                 document.getElementById('timeslot14_15').style.background = "transparent";
                 document.getElementById('timeslot15_16').style.background = "transparent";
@@ -163,7 +149,7 @@ const TimeSlot = () => {
                 document.getElementById('timeslot10_11').style.background = "transparent";
                 document.getElementById('timeslot11_12').style.background = "transparent";
                 document.getElementById('timeslot12_13').style.background = "transparent";
-                document.getElementById('timeslot9_10').style.background = "transparent";
+      
                 document.getElementById('timeslot14_15').style.background = "transparent";
                 document.getElementById('timeslot15_16').style.background = "transparent";
                 document.getElementById('timeslot16_17').style.background = "transparent";
@@ -178,7 +164,7 @@ const TimeSlot = () => {
                 document.getElementById('timeslot11_12').style.background = "transparent";
                 document.getElementById('timeslot12_13').style.background = "transparent";
                 document.getElementById('timeslot13_14').style.background = "transparent";
-                document.getElementById('timeslot9_10').style.background = "transparent";
+      
                 document.getElementById('timeslot15_16').style.background = "transparent";
                 document.getElementById('timeslot16_17').style.background = "transparent";
                 document.getElementById('timeslot17_18').style.background = "transparent";
@@ -193,7 +179,7 @@ const TimeSlot = () => {
                 document.getElementById('timeslot12_13').style.background = "transparent";
                 document.getElementById('timeslot13_14').style.background = "transparent";
                 document.getElementById('timeslot14_15').style.background = "transparent";
-                document.getElementById('timeslot9_10').style.background = "transparent";
+      
                 document.getElementById('timeslot16_17').style.background = "transparent";
                 document.getElementById('timeslot17_18').style.background = "transparent";
                 setTime('timeslot15_16');
@@ -208,7 +194,7 @@ const TimeSlot = () => {
                 document.getElementById('timeslot13_14').style.background = "transparent";
                 document.getElementById('timeslot14_15').style.background = "transparent";
                 document.getElementById('timeslot15_16').style.background = "transparent";
-                document.getElementById('timeslot9_10').style.background = "transparent";
+      
                 document.getElementById('timeslot17_18').style.background = "transparent";
                 setTime('timeslot16_17');
     
@@ -223,7 +209,7 @@ const TimeSlot = () => {
                 document.getElementById('timeslot14_15').style.background = "transparent";
                 document.getElementById('timeslot15_16').style.background = "transparent";
                 document.getElementById('timeslot16_17').style.background = "transparent";
-                document.getElementById('timeslot9_10').style.background = "transparent";
+      
                 setTime('timeslot17_18');
     
             }
