@@ -65,7 +65,7 @@ const Registration = () =>{
                         const node = document.createElement("p");
                         node.style.color = "red";
                         node.style.fontSize = "10px";
-                        node.style.marginLeft = "70px";
+                        node.style.marginLeft = "160px";
                         node.innerHTML = "Amount of Booking Exceeded"
                         if(count===0){
                             document.getElementById('parent').appendChild(node);
