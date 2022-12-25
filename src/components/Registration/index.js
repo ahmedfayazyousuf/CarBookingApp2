@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import firebase from '../../firbase';
 import '../All.css';
@@ -8,6 +8,8 @@ import { useParams } from "react-router-dom";
 const Registration = () =>{
     const navigate = useNavigate();
     const { id } = useParams();
+
+    const [count, setCount] = useState(0);
 
 
     function HandleSubmit(){
@@ -65,7 +67,11 @@ const Registration = () =>{
                         node.style.fontSize = "10px";
                         node.style.marginLeft = "70px";
                         node.innerHTML = "Amount of Booking Exceeded"
-                        document.getElementById('parent').appendChild(node);
+                        if(count===0){
+                            document.getElementById('parent').appendChild(node);
+                            setCount(1);
+                        }
+                        
                         console.log("added")
                     }
                     else{
