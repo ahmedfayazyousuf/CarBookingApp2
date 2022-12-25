@@ -1,5 +1,6 @@
 import './UserNissan.css';
 import NissanLogo from '../nissanlogo.png';
+import GetReady from '../getready.png';
 import ChooseNissan from './choosenissan.png';
 import ChooseInfiniti from './chooseinfiniti.png';
 import React, { useEffect } from 'react';
@@ -49,10 +50,8 @@ const UserChooseCompany = () => {
                 <img src={NissanLogo} alt="Logo" style={{width: '20vh'}}/>
             </div>
 
-            <div style={{display: 'flex', flexDirection: 'column', textAlign: 'center', margin: '0', padding: '0'}} >
-                <h1 style={{fontSize: '30px', marginTop: '20px', marginBottom: '-8px'}} >GET READY TO</h1>
-                <h1 className='explore' style={{fontSize: '46px', margin: '-12px'}}>EXPLORE</h1>
-                <h1 style={{fontSize: '24px'}}>MORE. TOGETHER.</h1>
+            <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+                <img src={GetReady} alt="Logo" style={{width: '40vh', marginTop: '30px', marginBottom: '10px'}}/>
             </div>
 
             <div style={{display: 'flex', flexDirection: 'column', textAlign: 'center', margin: '0', padding: '0'}} >

@@ -45,7 +45,7 @@ h1, p, a, .std{
     font-family: myFant;
     src:url(NissanBrand-Regular.ttf);
 }
-h1, p, a{
+h1, p, a, label, input{
     font-family: myFant;
 }
 

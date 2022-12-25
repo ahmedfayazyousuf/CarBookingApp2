@@ -1,6 +1,7 @@
 
 import '../All.css';
 import NissanLogo from '../nissanlogo.png';
+import GetReady from '../getready.png';
 import firebase from '../../firbase';
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
@@ -39,11 +40,15 @@ const DinnerRegistration = () =>{
                 <img src={NissanLogo} alt="Logo" style={{width: '25vh', marginTop: '30px', marginBottom: '10px'}}/>
             </div>
 
-            <div style={{display: 'flex', flexDirection: 'column', textAlign: 'center', margin: '0', padding: '0'}} >
+            <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+                <img src={GetReady} alt="Logo" style={{width: '40vh', marginTop: '30px', marginBottom: '10px'}}/>
+            </div>
+
+            {/* <div style={{display: 'flex', flexDirection: 'column', textAlign: 'center', margin: '0', padding: '0'}} >
                 <h1 style={{fontSize: '43px', marginTop: '20px', marginBottom: '-8px'}} >GET READY TO</h1>
                 <h1 className='explore' style={{fontSize: '66px', margin: '-24px'}}>EXPLORE</h1>
                 <h1 style={{fontSize: '34px', marginBottom: '10px'}}>MORE. TOGETHER.</h1>
-            </div>
+            </div> */}
 
             <div style={{display: 'flex', flexDirection: 'column', textAlign: 'center', margin: '0', padding: '0'}} >
                 <p>Dinner Registration</p>
