@@ -198,7 +198,7 @@ var count = 0
                 <img src={Banner} alt="Logo" style={{width: '40vh'}}/>
             </div>
 
-            <div style={{display: 'flex', flexDirection: 'column', textAlign: 'center', margin: '0', marginTop:'30px', marginBottom:'25px', padding: '0'}} >
+            <div style={{display: 'flex', flexDirection: 'column', textAlign: 'center', margin: '0', marginTop:'40px', marginBottom:'25px', padding: '0'}} >
                 <p>Please select a car to test drive</p>
             </div>  
 
