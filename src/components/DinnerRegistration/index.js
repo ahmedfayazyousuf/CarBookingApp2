@@ -5,8 +5,10 @@ import GetReady from '../getready.png';
 import firebase from '../../firbase';
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 const DinnerRegistration = () =>{
     const navigate = useNavigate();
+    const [count, setCount] = useState(0);
     async function Handlesubmit (){
 
         const Users = firebase.firestore().collection("Users");
@@ -14,23 +16,51 @@ const DinnerRegistration = () =>{
         const Number = document.getElementById("no").value;
         const Name = document.getElementById("Name").value;
 
-        Users.add({
-            Name:Name,
-            Email:Email,
-            Number:Number,
-            Dinner:"yes",
-            time: firebase.firestore.FieldValue.serverTimestamp()
+        Users.where("Email", "==", Email).get().then((doc)=>{
+            if(doc.empty){
 
-        }).then(function(docRef) {
-            console.log("Document written with ID: ", docRef.id);
-            axios.post("https://imagersvpserver.azurewebsites.net/send_dinner",
-            {email:Email})
-        }).then(()=>{
-            navigate("/success",{state:{uid:2,count:100}});
+                Users.add({
+                    Name:Name,
+                    Email:Email,
+                    Number:Number,
+                    Dinner:"yes",
+                    time: firebase.firestore.FieldValue.serverTimestamp()
+        
+                }).then(function(docRef) {
+                    console.log("Document written with ID: ", docRef.id);
+                    axios.post("https://imagersvpserver.azurewebsites.net/send_dinner",
+                    {email:Email})
+                }).then(()=>{
+                    navigate("/success",{state:{uid:2,count:100}});
+                })
+                .catch(function(error) {
+                    console.error("Error adding document: ", error);
+                });
+
+            }else{
+                doc.forEach((doc) => {
+                    if(doc.data().Dinner === 'yes'){
+                        console.log("Exceeded Limit")
+                        const node = document.createElement("p");
+                        node.style.color = "red";
+                        node.style.fontSize = "10px";
+                        node.style.marginLeft = "160px";
+                        node.innerHTML = "Dinner Already Booked"
+                        if(count===0){
+                            document.getElementById('parent').appendChild(node);
+                            setCount(1);
+                        }
+                        
+                        console.log("added")
+                    }
+                    else{
+                        navigate("/success",{state:{uid:2,count:100}});
+                    }
+                });
+            }
         })
-        .catch(function(error) {
-            console.error("Error adding document: ", error);
-        });
+
+        
     }
         
     return(
