@@ -55,7 +55,7 @@ const UserChooseCompany = () => {
             </div>
 
             <div style={{display: 'flex', flexDirection: 'column', textAlign: 'center', margin: '0', padding: '0'}} >
-                <p style={{fontSize: '15px', marginTop: '10px'}} >Which models would you like to test drive??</p>
+                <p style={{fontSize: '15px', marginTop: '10px'}} >Which models would you like to test drive?</p>
             </div>
 
 
