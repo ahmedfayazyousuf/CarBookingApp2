@@ -247,6 +247,10 @@ const TimeSlot = () => {
                                     car = 'Infiniti'
                                 }
 
+                                if(model === 'Nismo370z'){
+                                    model = 'Nismo 370z'
+                                }
+
                                 setName(name);
                                 setDinner(dinner)
                                 setTimeslot(timeslot)
@@ -312,7 +316,11 @@ const TimeSlot = () => {
                                 if(car === 'Infinity'){
                                     car = 'Infiniti'
                                 }
-                                
+
+                                if(model === 'Nismo370z'){
+                                    model = 'Nismo 370z'
+                                }
+
                                 setName(name);
                                 setDinner(dinner)
                                 setTimeslot(timeslot)
