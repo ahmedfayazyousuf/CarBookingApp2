@@ -243,6 +243,10 @@ const TimeSlot = () => {
                                 var model = id
                                 var email = data.Email
 
+                                if(car === 'Infinity'){
+                                    car = 'Infiniti'
+                                }
+
                                 setName(name);
                                 setDinner(dinner)
                                 setTimeslot(timeslot)
@@ -304,6 +308,11 @@ const TimeSlot = () => {
                                 var car = location.state.car
                                 var model = id
                                 var email = data.Email
+
+                                if(car === 'Infinity'){
+                                    car = 'Infiniti'
+                                }
+                                
                                 setName(name);
                                 setDinner(dinner)
                                 setTimeslot(timeslot)
