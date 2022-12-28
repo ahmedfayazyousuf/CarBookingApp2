@@ -46,21 +46,24 @@ const TimeSlot = () => {
 
     var cccount = 0
 
-    if(id === 'Z' || id==='Nismo370z'){
-        const node = document.createElement("p");
-        node.style.color = "red";
-        node.style.fontSize = "10px";
-        node.style.marginRight = "10px";
-        node.innerHTML = "No Timeslots Available";
-document.getElementById(`slotparent`).appendChild(node);
+//     if(id === 'Z' || id==='Nismo370z'){
+//         const node = document.createElement("p");
+//         node.style.color = "red";
+//         node.style.fontSize = "10px";
+//         node.style.marginRight = "10px";
+//         node.innerHTML = "No Timeslots Available";
+// document.getElementById(`slotparent`).appendChild(node);
 
-    }
+//     }
+
+
 
 
 
     const Location = firebase.firestore().collection("Cars").doc(`${location.state.car}`);
     // eslint-disable-next-line
     const Cars = Location.collection('models').doc(`${id}`).collection('timeslot').get().then((querySnapshot) => {
+        var count = 0;
     querySnapshot.forEach((doc) => {
         Location.collection('models').doc(`${id}`).collection('timeslot').doc(`${doc.id}`).get().then((doc2)=>{
             console.log()
@@ -68,9 +71,13 @@ document.getElementById(`slotparent`).appendChild(node);
                 document.getElementById(`${doc.id}`).disabled = true;
                 document.getElementById(`${doc.id}`).display = "none";
                 document.getElementById(`${doc.id}`).remove();
-
+                setCcount(ccount+1)
             }
         })
+
+        console.log(count);
+
+        
 
         setUser(current => [...current, doc.data()]);
     });
@@ -80,6 +87,18 @@ document.getElementById(`slotparent`).appendChild(node);
      
         if(ccount === 8){
            
+        }
+    })
+
+    const Cars2 = Location.collection('models').doc(`${id}`).collection('timeslot').where("available", "==", 0).get().then((doc)=>{
+        console.log(doc.size)
+        if(doc.size === 8){
+                    const node = document.createElement("p");
+        node.style.color = "red";
+        node.style.fontSize = "10px";
+        node.style.marginRight = "10px";
+        node.innerHTML = "No Timeslots Available";
+document.getElementById(`slotparent`).appendChild(node);
         }
     })
 
