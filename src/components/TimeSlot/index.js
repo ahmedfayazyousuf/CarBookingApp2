@@ -69,8 +69,8 @@ const TimeSlot = () => {
             console.log()
             if(doc2.data().available===0){
                 document.getElementById(`${doc.id}`).disabled = true;
-                document.getElementById(`${doc.id}`).display = "none";
-                document.getElementById(`${doc.id}`).remove();
+                document.getElementById(`${doc.id}`).style.display = "none";
+                // document.getElementById(`${doc.id}`).remove();
                 setCcount(ccount+1)
             }
         })
