@@ -11,6 +11,7 @@ const Registration = () =>{
     const { id } = useParams();
 
     const [count, setCount] = useState(0);
+    const [emailB, setEmailB] = useState(false);
 
 
     function HandleSubmit(){
@@ -19,7 +20,29 @@ const Registration = () =>{
         const Email = document.getElementById("email").value;
         const Number = document.getElementById("no").value;
         const Name = document.getElementById("Name").value;
+       
         console.log(Email)
+
+        var validRegex =   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
+        if (Email === "" || !Email.match(validRegex))
+        {
+            if(emailB === false){
+                const el = document.createElement("p");
+                const name = document.getElementById('parent')
+                el.id = "emailerr"
+                el.style.color = "red";
+                el.style.marginLeft = "160px";
+                el.style.fontSize = "10px";
+                el.innerHTML = "Invalid Email"
+                name.appendChild(el);
+                setEmailB(true)
+            }
+            console.log("lessgoooooo")
+            return;
+        }
+
+
 
        
         Users.where("Email", "==", Email).get().then((doc)=>{
