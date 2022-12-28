@@ -12,6 +12,7 @@ import axios from "axios";
 
 
 const TimeSlot = () => {
+    const [ccount, setCcount] = useState(0);
     const [user, setUser] = useState([])
     const [file, setFile] = useState("");
     const location = useLocation();
@@ -43,6 +44,18 @@ const TimeSlot = () => {
     // const data = await res.json();
     // setUser(data)
 
+    var cccount = 0
+
+    if(id === 'Z' || id==='Nismo370z'){
+        const node = document.createElement("p");
+        node.style.color = "red";
+        node.style.fontSize = "10px";
+        node.style.marginRight = "10px";
+        node.innerHTML = "No Timeslots Available";
+document.getElementById(`slotparent`).appendChild(node);
+
+    }
+
 
 
     const Location = firebase.firestore().collection("Cars").doc(`${location.state.car}`);
@@ -53,12 +66,21 @@ const TimeSlot = () => {
             console.log()
             if(doc2.data().available===0){
                 document.getElementById(`${doc.id}`).disabled = true;
+                document.getElementById(`${doc.id}`).display = "none";
+                document.getElementById(`${doc.id}`).remove();
+
             }
         })
+
         setUser(current => [...current, doc.data()]);
     });
 
 
+    }).then(()=>{
+     
+        if(ccount === 8){
+           
+        }
     })
 
     // console.log(Cars)
@@ -373,8 +395,8 @@ const TimeSlot = () => {
                 <p style={{fontSize: '15px', marginTop: '10px'}} >Please select a time slot for your test drive.</p>
             </div>
 
-            <div className="slotparent" style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems:'center', width: '100%', marginTop: '15px'}}>
-                <div className="slotdiv" style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems:'center', width: '70%'}}>
+            <div className="slotparent"  style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems:'center', width: '100%', marginTop: '15px'}}>
+                <div className="slotdiv" style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems:'center', width: '70%'}} id='slotparent'>
                     {/* <button className="grab" id="timeslot9_10" onClick={() => {Handleclick("timeslot9_10")}} value="9:AM - 10 AM" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>9:00 AM</button> */}
                     <button className="grab" id="timeslot10_11" onClick={() => {Handleclick("timeslot10_11")}} value="10 AM - 11 AM" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>10:00 AM</button>
                     <button className="grab" id="timeslot11_12" onClick={() => {Handleclick("timeslot11_12")}} value="11 AM - 12 PM" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>11:00 AM</button>
