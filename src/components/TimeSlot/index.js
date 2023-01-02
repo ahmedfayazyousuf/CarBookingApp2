@@ -266,6 +266,7 @@ document.getElementById(`slotparent`).appendChild(node);
                 console.log(location.state.car)
                 Location.collection('models').doc(`${id}`).collection('timeslot').doc(e).get().then(async (doc2)=>{
                     if(doc2.data().available !== 0){
+
                         Location.collection('models').doc(`${id}`).collection('timeslot').doc(e).update({available : firebase.firestore.FieldValue.increment(-1)})
                         await User.update({
                             Timeslot: e,
