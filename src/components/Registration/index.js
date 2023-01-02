@@ -5,17 +5,22 @@ import '../All.css';
 import NissanLogo from '../nissanlogo.png';
 import GetReady from '../getready.png';
 import { useParams } from "react-router-dom";
+import {useRef} from 'react';
+
+
 
 const Registration = () =>{
     const navigate = useNavigate();
     const { id } = useParams();
+    const buttonRef = useRef(null);
 
     const [count, setCount] = useState(0);
     const [emailB, setEmailB] = useState(false);
 
 
     function HandleSubmit(){
-        
+
+        buttonRef.current.disabled = true;
         const Users = firebase.firestore().collection("Users");
         const Email = document.getElementById("email").value;
         const Number = document.getElementById("no").value;
@@ -164,7 +169,7 @@ const Registration = () =>{
                         </div>
                     </div>
 
-                    <button className="grab" style={{width:"150px", marginTop: '30px', margin: '10px', borderRadius: '10px', padding: '10px', color: 'white', backgroundColor: 'black'}} onClick={HandleSubmit}>Login</button>
+                    <button ref={buttonRef} className="grab" style={{width:"150px", marginTop: '30px', margin: '10px', borderRadius: '10px', padding: '10px', color: 'white', backgroundColor: 'black'}} onClick={HandleSubmit}>Login</button>
                 </div>
                 
             </div>
