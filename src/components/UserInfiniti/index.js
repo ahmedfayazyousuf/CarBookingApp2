@@ -77,41 +77,41 @@ var count = 0
     }
 
     function carClick(e){
-        // if(e === 'QX80'){
-        //     document.getElementById(e).style.background = "rgb(200, 197, 197)";
-            // document.getElementById('QX60').style.background = "transparent";
-        //     document.getElementById('QX55').style.background = "transparent";
-        //     // document.getElementById('Q60').style.background = "transparent";
-        //     document.getElementById('Q50').style.background = "transparent";
-        //     document.getElementById('QX50').style.background = "transparent";
-        //     setCar('/QX80');
-        // }
+        if(e === 'QX80'){
+            document.getElementById(e).style.background = "rgb(200, 197, 197)";
+            document.getElementById('QX60').style.background = "transparent";
+            // document.getElementById('QX55').style.background = "transparent";
+            // document.getElementById('Q60').style.background = "transparent";
+            document.getElementById('Q50').style.background = "transparent";
+            document.getElementById('QX50').style.background = "transparent";
+            setCar('/QX80');
+        }
 
         if(e === 'QX60'){
             document.getElementById(e).style.background = "rgb(200, 197, 197)";
-            // document.getElementById('QX80').style.background = "transparent";
-            document.getElementById('QX55').style.background = "transparent";
+            document.getElementById('QX80').style.background = "transparent";
+            // document.getElementById('QX55').style.background = "transparent";
             // document.getElementById('Q60').style.background = "transparent";
             document.getElementById('Q50').style.background = "transparent";
             document.getElementById('QX50').style.background = "transparent";
             setCar('/QX60');
         }
 
-        if(e === 'QX55'){
-            document.getElementById(e).style.background = "rgb(200, 197, 197)";
-            // document.getElementById('QX80').style.background = "transparent";
-            document.getElementById('QX60').style.background = "transparent";
-            // document.getElementById('Q60').style.background = "transparent";
-            document.getElementById('Q50').style.background = "transparent";
-            document.getElementById('QX50').style.background = "transparent";
-            setCar('/QX55');
-        }
+        // if(e === 'QX55'){
+        //     document.getElementById(e).style.background = "rgb(200, 197, 197)";
+        //     // document.getElementById('QX80').style.background = "transparent";
+        //     document.getElementById('QX60').style.background = "transparent";
+        //     // document.getElementById('Q60').style.background = "transparent";
+        //     document.getElementById('Q50').style.background = "transparent";
+        //     document.getElementById('QX50').style.background = "transparent";
+        //     setCar('/QX55');
+        // }
 
         // if(e === 'Q60'){
         //     document.getElementById(e).style.background = "rgb(200, 197, 197)";
         //     document.getElementById('QX80').style.background = "transparent";
             // document.getElementById('QX60').style.background = "transparent";
-        //     document.getElementById('QX55').style.background = "transparent";
+            // document.getElementById('QX55').style.background = "transparent";
         //     document.getElementById('Q50').style.background = "transparent";
         //     document.getElementById('QX50').style.background = "transparent";
         //     setCar('/Q60');
@@ -119,9 +119,9 @@ var count = 0
 
         if(e === 'Q50'){
             document.getElementById(e).style.background = "rgb(200, 197, 197)";
-            // document.getElementById('QX80').style.background = "transparent";
+            document.getElementById('QX80').style.background = "transparent";
             document.getElementById('QX60').style.background = "transparent";
-            document.getElementById('QX55').style.background = "transparent";
+            // document.getElementById('QX55').style.background = "transparent";
             // document.getElementById('Q60').style.background = "transparent";
             document.getElementById('QX50').style.background = "transparent";
             setCar('/Q50');
@@ -129,9 +129,9 @@ var count = 0
 
         if(e === 'QX50'){
             document.getElementById(e).style.background = "rgb(200, 197, 197)";
-            // document.getElementById('QX80').style.background = "transparent";
+            document.getElementById('QX80').style.background = "transparent";
             document.getElementById('QX60').style.background = "transparent";
-            document.getElementById('QX55').style.background = "transparent";
+            // document.getElementById('QX55').style.background = "transparent";
             // document.getElementById('Q60').style.background = "transparent";
             document.getElementById('Q50').style.background = "transparent";
             setCar('/QX50');
@@ -166,12 +166,12 @@ var count = 0
 
             <div className="rower" style={{display: 'flex', textAlign: 'center', justifyContent: 'center', alignItems: 'center', margin: '0', padding:'0'}} >
     
-                {/* <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-end'}}>
+                <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-end'}}>
                     <div id='QX80' className="content content-1" onClick={()=>{carClick('QX80')}} style={{padding: '0', margin: '10px'}}>
                         <img src={QX80} alt="Logo" style={{width: '20vh'}}/>
                         <p style={{fontSize: '10px'}}>QX80</p>
                     </div>
-                </div> */}
+                </div>
 
                 <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start'}}>
                     <div id='QX60' className="content content-1" onClick={()=>{carClick('QX60')}} style={{padding: '0', margin: '10px'}}>
@@ -180,12 +180,12 @@ var count = 0
                     </div>
                 </div>
 
-                <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start'}}>
+                {/* <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start'}}>
                     <div id='QX55' className="content content-1" onClick={()=>{carClick('QX55')}} style={{padding: '0', margin: '10px'}}>
                         <img src={QX55} alt="Logo" style={{width: '20vh'}}/>  
                         <p style={{fontSize: '10px'}}>QX55</p>
                     </div>
-                </div>
+                </div> */}
                 
             </div>
 
