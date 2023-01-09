@@ -134,7 +134,7 @@ const Registration = () =>{
         <div style={{height: '100vh', width: '100vw', backgroundImage: `url("desktop.jpg")`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed', backgroundSize: 'cover', margin: '0', padding: '0'}}>
         
             <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
-                <img src={NissanLogo} alt="Logo" style={{width: '25vh', marginTop: '30px', marginBottom: '10px'}}/>
+                <img src={NissanLogo} alt="Logo" style={{width: '25vh', marginTop: '70px', marginBottom: '10px'}}/>
             </div>
 
             <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
@@ -153,23 +153,23 @@ const Registration = () =>{
 
                     <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'right', width: '100%'}}>
                         <label>Full Name</label>
-                        <input type="text" id="Name" style={{marginLeft: '10px', marginRight:'45px',width:"50%"}} /> 
+                        <input type="text" id="Name" style={{marginLeft: '10px', marginRight:'45px',width:"50%", height:'27px'}} /> 
                     </div>
                     
                     <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'right', width: '100%'}}>
                         <label>Company Email</label>
-                        <input type="email" id='email' style={{marginLeft: '10px',marginRight:'45px', width:"50%"}} />
+                        <input type="email" id='email' style={{marginLeft: '10px',marginRight:'45px', width:"50%", height:'27px'}} />
                     </div>
 
 
                     <div id='parent' style={{width:"100%", display: 'flex', flexDirection: 'column'}}>
                         <div  style={{display: 'flex', flexDirection: 'row', justifyContent: 'right', width: '100%'}}>
                             <label>Phone</label>
-                            <input type="number" id='no' style={{marginLeft: '10px', marginRight:'45px', marginBottom:'15px', width:"50%"}} />
+                            <input type="number" id='no' style={{marginLeft: '10px', marginRight:'45px', marginBottom:'15px', width:"50%", height:'27px'}} />
                         </div>
                     </div>
 
-                    <button ref={buttonRef} className="grab" style={{width:"150px", marginTop: '30px', margin: '10px', borderRadius: '10px', padding: '10px', color: 'white', backgroundColor: 'black'}} onClick={HandleSubmit}>Login</button>
+                    <button ref={buttonRef} className="grab" style={{width:"180px", marginTop: '30px', margin: '10px', borderRadius: '10px', padding: '10px', color: 'white', backgroundColor: 'black', fontSize:'15px'}} onClick={HandleSubmit}>LOGIN</button>
                 </div>
                 
             </div>
