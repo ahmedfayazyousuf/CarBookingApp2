@@ -418,22 +418,22 @@ document.getElementById(`slotparent`).appendChild(node);
             <div className="slotparent"  style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems:'center', width: '100%', marginTop: '15px'}}>
                 <div className="slotdiv" style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems:'center', width: '70%'}} id='slotparent'>
                     {/* <button className="grab" id="timeslot9_10" onClick={() => {Handleclick("timeslot9_10")}} value="9:AM - 10 AM" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>9:00 AM</button> */}
-                    <button className="grab" id="timeslot10_11" onClick={() => {Handleclick("timeslot10_11")}} value="10 AM - 11 AM" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>10:00 AM</button>
-                    <button className="grab" id="timeslot11_12" onClick={() => {Handleclick("timeslot11_12")}} value="11 AM - 12 PM" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>11:00 AM</button>
-                    <button className="grab" id="timeslot12_13" onClick={() => {Handleclick("timeslot12_13")}} value="12 PM - 1 PM" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>12:00 PM</button>
-                    <button className="grab" id="timeslot13_14" onClick={() => {Handleclick("timeslot13_14")}} value="1 PM - 2 PM" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>1:00 PM</button>
+                    <button className="grab" id="timeslot10_11" onClick={() => {Handleclick("timeslot10_11")}} value="10 AM - 11 AM" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent', border:'1px solid black'}}>10:00 AM</button>
+                    <button className="grab" id="timeslot11_12" onClick={() => {Handleclick("timeslot11_12")}} value="11 AM - 12 PM" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent', border:'1px solid black'}}>11:00 AM</button>
+                    <button className="grab" id="timeslot12_13" onClick={() => {Handleclick("timeslot12_13")}} value="12 PM - 1 PM" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent', border:'1px solid black'}}>12:00 PM</button>
+                    <button className="grab" id="timeslot13_14" onClick={() => {Handleclick("timeslot13_14")}} value="1 PM - 2 PM" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent', border:'1px solid black'}}>1:00 PM</button>
                 </div>
 
                 <div className="slotdiv" style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems:'center', width: '70%'}}>
-                    <button className="grab" id="timeslot14_15" onClick={() => {Handleclick("timeslot14_15")}} value="2 PM - 3 PM" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>2:00 PM</button>
-                    <button className="grab" id="timeslot15_16" onClick={() => {Handleclick("timeslot15_16")}} value="3 PM - 4 PM" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>3:00 PM</button>
-                    <button className="grab" id="timeslot16_17" onClick={() => {Handleclick("timeslot16_17")}} value="4 PM - 5 PM" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>4:00 PM</button>
-                    <button className="grab" id="timeslot17_18" onClick={() => {Handleclick("timeslot17_18")}} value="5 PM - 6 PM" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent'}}>5:00 PM</button>
+                    <button className="grab" id="timeslot14_15" onClick={() => {Handleclick("timeslot14_15")}} value="2 PM - 3 PM" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent', border:'1px solid black'}}>2:00 PM</button>
+                    <button className="grab" id="timeslot15_16" onClick={() => {Handleclick("timeslot15_16")}} value="3 PM - 4 PM" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent', border:'1px solid black'}}>3:00 PM</button>
+                    <button className="grab" id="timeslot16_17" onClick={() => {Handleclick("timeslot16_17")}} value="4 PM - 5 PM" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent', border:'1px solid black'}}>4:00 PM</button>
+                    <button className="grab" id="timeslot17_18" onClick={() => {Handleclick("timeslot17_18")}} value="5 PM - 6 PM" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'black', backgroundColor: 'transparent', border:'1px solid black'}}>5:00 PM</button>
                 </div>
 
                 <button className="grab" style={{width:"150px", margin: '10px', borderRadius: '5px', padding: '10px', color: 'white', backgroundColor: 'black'}} onClick={() => {Handlesubmit(time)}} >Next</button>
 
-
+ 
             </div>
         </>
     )
